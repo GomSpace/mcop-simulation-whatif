@@ -1,0 +1,215 @@
+<html>
+<header>
+<title>HOOPSIM-whatif</title>
+<style>
+body {
+    background-color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    background-color: #8ac9e2;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+button {
+    background-color: #2a6c92;
+    color: #eeeeee;
+}
+
+</style>
+</header>
+
+<body>
+<h1>
+<SCRIPT LANGUAGE="javascript">
+document.write('<DIV>'+"HOOP SIMULATION - WHAT IF ANALYSIS TOOL"+'</DIV>');
+</SCRIPT>
+</h1>
+<form id='myForm'>
+        
+<label>simulation-scenario-bundle: </label>
+<input type="text" name="scenarioFile" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/src/simulation-scenario-bundle.json" size="80"/>
+<br>
+
+<label>output folder: </label>
+<input type="text" name="outputFolder" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/output/" size="80"/>
+<p></p>
+
+<button id='button' type="submit" onclick="testCere(this); return false;" name="openScenarioFile">open simulation-scenario-bundle</button>
+<p></p>
+
+<!-- <a href="file://http://127.0.0.1:8080/C:/Users/maan/projects/mcop-simulation-whatif/src/simulation-scenario-bundle.json" target="_blank">file.ext</a>
+
+<button id='button' type="submit" onclick="myFun() ; return false;">Try it</button> -->
+
+
+<p></p>
+<h4>Simulation Parameters</h4>
+<p></p>
+<label>periodic model update [sec]: </label>
+<input type="text" name="periodicUpdate" value="600" size="80"/>
+<br>
+<label>modem modulation scheme: </label>
+<input type="text" name="modemModulationFile" value="/mcop-simulation-federates/input/modem_scheme.csv" size="80"/>
+<p></p>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="runSimulation">RUN SIMULATION</button>
+
+<button id='button' type="submit" onclick="testCere(this); return false;" name="kibanaOutput">KIBANA output</button>
+<p></p>
+
+<h4>HOOP simulation-scenario-bundle EXPORT</h4>
+<p>
+        <label>HOOP simulation-scenario-bundle: </label>
+        <input type="text" name="HOOPscenarioFile" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/src/scenario-bundle-HOOP.json" size="80"/>
+        <p></p>
+        Click on "export" to convert scenario in HOOP simulation-scenario-bundle <br>
+        into a scenario compatible with the What If analysis. <br>
+
+        The generated file will be exported to the output folder.
+
+</p>
+<p></p>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="exportHoopScenarioFile">EXPORT</button>
+<label>file name: </label>
+<input type="text" name="HOOPscenarioCompatibleFileName" value="scenario-bundle-HOOP-simulation-compatible" size="80"/>
+<p></p>
+
+<!-- 
+<script>
+    function myFunction() {
+      
+    }
+</script> -->
+
+<!-- <script id="myJson" type="application/json">
+    { 
+      name: 'Foo' 
+    }
+</script>
+   
+<script type="text/javascript">
+    myFunction(function() {
+        var x = JSON.parse($('#myJson').html());
+        alert(x.name); //Foo
+    });
+
+
+        fetch("./abc.json")
+            .then(function(resp) {
+                return resp.json();
+            })
+            .then(function(data) {
+                console.log(data);
+            });
+</script> -->
+
+
+
+<!-- <script type="text/javascript" src="abc.json"> -->
+<script>
+    function myFun() {
+        var jcontent = {
+            "firstName": "John",
+            "lastName": "Smith"
+        }
+        var output = document.getElementById('output')
+        output.innerHTML = 'new content';
+    }
+
+</script>
+
+
+<p id="demo1"></p>
+
+<script>
+    function myFunction() {
+        // abc = '[{"name" : "Niroj", "age" : "22"},{"name" : "Dey", "age" : "20"}]';
+
+        var mydata = JSON.parse(abc);
+        alert(mydata.length);
+
+        document.getElementById("demo1").innerHTML = mydata;
+        document.getElementById("demo").innerHTML = mydata;
+
+        // alert(mydata[0].name);
+        // alert(mydata[0].age);
+        // alert(mydata[1].name);
+        // alert(mydata[1].age);
+
+        var div = document.getElementById('data');
+
+        for(var i = 0;i < mydata.length; i++)
+        {
+            div.innerHTML = div.innerHTML + "<p class='inner' id="+i+">"+ mydata[i].age +"</p>" + "<br>";
+        }
+    }
+</script>
+
+    
+
+<!-- 
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script> -->
+
+
+<!-- ##################################################################### -->
+<script type="text/javascript">
+/*!
+ * Serialize all form data into a query string
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Node}   form The form to serialize
+ * @return {String}      The serialized form data
+ */
+var serialize = function (form) {
+
+	// Setup our serialized data
+	var serialized = [];
+
+	// Loop through each field in the form
+	for (var i = 0; i < form.elements.length; i++) {
+
+		var field = form.elements[i];
+
+		// Don't serialize fields without a name, submits, buttons, file and reset inputs, and disabled fields
+		if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
+
+		// If a multi-select, get all selections
+		if (field.type === 'select-multiple') {
+			for (var n = 0; n < field.options.length; n++) {
+				if (!field.options[n].selected) continue;
+				serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[n].value));
+			}
+		}
+
+		// Convert field data to a query string
+		else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+			serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
+		}
+	}
+
+	return serialized.join('&');
+
+};
+
+
+function testCere(element){
+     console.log(element);
+     var xhttp = new XMLHttpRequest();
+     var form = document.querySelector('#myForm');
+     console.log(form);
+     var formData = serialize(form) + "&"+ element.name +"=1";
+     console.log(formData);
+     xhttp.open("POST","http://127.0.0.1:8080/send",false);
+     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+     xhttp.send(formData);
+     window.history.go(0);
+}
+
+</script>
+<!-- ##################################################################### -->
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,4 @@
+timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
+1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,amountDataToHandle,0.0000,[Mbit]
+1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,amountDataToHandle,0.0000,[Mbit]
+1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,amountDataToHandle,0.0000,[Mbit]

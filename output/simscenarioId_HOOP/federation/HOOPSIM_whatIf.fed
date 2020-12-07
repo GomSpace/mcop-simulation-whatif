@@ -1,0 +1,82 @@
+(FED
+  (Federation HOOPSIM_whatIf)    ;; file tag
+  (FEDversion v1.3)               ;; required, specifies RTI spec version
+  (spaces )                       ;; no spaces defined federate
+  (objects
+    (class ObjectRoot             ;; required
+    (attribute privilegeToDeleteObject reliable timestamp)
+    (class RTIprivate)
+    (class OBC
+       (attribute payload__setRunning reliable timestamp)
+       (attribute payload__setTimeEventList reliable timestamp)
+       (attribute solararr__setRunning reliable timestamp)
+       (attribute solararr__setTimeEventList reliable timestamp)
+       (attribute pcdu__setRunning reliable timestamp)
+       (attribute pcdu__setTimeEventList reliable timestamp)
+       (attribute batt__setRunning reliable timestamp)
+       (attribute batt__setTimeEventList reliable timestamp)
+       (attribute target_GOMX-4A_PCDU1_setCurrentMode reliable timestamp)
+       (attribute target_GOMX-4A_payload1_setCurrentMode reliable timestamp)
+       (attribute ABORT reliable timestamp)
+       (attribute ORBIT_ABORT reliable timestamp)
+    )  ;; end OBC
+    (class ORBIT
+       (attribute ABORT reliable timestamp)
+       (attribute payload__setTimeEventList reliable timestamp)
+       (attribute solararr__setTimeEventList reliable timestamp)
+       (attribute pcdu__setTimeEventList reliable timestamp)
+       (attribute batt__setTimeEventList reliable timestamp)
+       (attribute target_GOMX-4A_SolarArray_setInsolation reliable timestamp)
+    )  ;; end ORBIT
+    (class pcdu
+      (attribute ABORT reliable timestamp)
+      (attribute output_GOMX-4A_PCDU1_setTimeEvent reliable timestamp)
+      (attribute output_GOMX-4A_PCDU1_setBattPower reliable timestamp)
+      (attribute output_GOMX-4A_PCDU1_setPowerOnOff reliable timestamp)
+    ) ;; End pcdu
+    (class batt
+      (attribute ABORT reliable timestamp)
+      (attribute output_GOMX-4A_BatteryPack_setTimeEvent reliable timestamp)
+    ) ;; End batt
+    (class solararr
+      (attribute ABORT reliable timestamp)
+      (attribute output_GOMX-4A_SolarArray_setTimeEvent reliable timestamp)
+      (attribute output_GOMX-4A_SolarArray_setSunPower reliable timestamp)
+    ) ;; End solararr
+    (class payload
+      (attribute ABORT reliable timestamp)
+      (attribute output_GOMX-4A_payload1_setTimeEvent reliable timestamp)
+      (attribute output_GOMX-4A_payload1_setLoad reliable timestamp)
+      (attribute output_GOMX-4A_payload1_setDataRate reliable timestamp)
+      (attribute output_GOMX-4A_payload1_setDataChunk reliable timestamp)
+      (attribute output_GOMX-4A_NanoCam_setTimeEvent reliable timestamp)
+      (attribute output_GOMX-4A_NanoCam_setLoad reliable timestamp)
+      (attribute output_GOMX-4A_NanoCam_setDataRate reliable timestamp)
+      (attribute output_GOMX-4A_NanoCam_setDataChunk reliable timestamp)
+    ) ;; End payload
+    (class storageunit
+      (attribute ABORT reliable timestamp)
+    ) ;; End storageunit
+    (class receiver
+      (attribute ABORT reliable timestamp)
+    ) ;; End receiver
+    (class transmitter
+      (attribute ABORT reliable timestamp)
+    ) ;; End transmitter
+    (class transceiver
+      (attribute ABORT reliable timestamp)
+    ) ;; End transceiver
+    (class Manager         ;; Manager class and subclasses are required - However does not work for CERTI with HLA 1.3, need HLA evolved
+        (class Federation        ) ;; end Federation
+    )     ;; end class Manager
+  )       ;; end ObjectRoot
+  )       ;; end objects
+  (interactions
+    (class InteractionRoot reliable timestamp   ;; required
+       (class RTIprivate reliable timestamp)
+       (class Manager reliable receive          ;; Manager class and subclasses are required - However does not work for CERTI with HLA 1.3, need HLA evolved
+          (class SimulationEnds reliable receive)
+       )         ;; end Menager
+    )         ;; end InteractionRoot
+  )         ;; end interactions
+)         ;; end FED

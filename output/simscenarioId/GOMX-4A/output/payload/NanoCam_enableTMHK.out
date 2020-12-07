@@ -1,0 +1,2 @@
+timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
+1607074319,simscenarioId,0,GOMX-4A,NanoCam,payload,parameter,enableTMHK,False,

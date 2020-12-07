@@ -1,0 +1,96 @@
+Report of STATES and FEATURES for satellite GOMX-4A
+
+modelName : SolarArray
+modelType : solararr
+  - STATES
+    state.insolation = True
+    state.sunPower = 3000.0
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0
+    feature.powerProduced = 3000.0
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+
+modelName : PCDU1
+modelType : pcdu
+  - STATES
+    state.mainSource = SolarArray
+    state.currentMode = OFF
+    state.load = 0.0
+    state.powerIn = 0.0
+    state.powerOut = 0.0
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0.0
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.unknownMode = {'description': 'Check target mode is supported', 'severity': 'WARNING', 'range': (None, None)}
+
+modelName : BatteryPack
+modelType : batt
+  - STATES
+    state.dischargingStatus = False
+    state.remainingCharge = True
+    state.stateOfCharge = 400000.0
+    state.powerIn = 0.0
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0.0
+    feature.storageCapacity = 500000
+    feature.p = 0.0005
+    feature.c = 0.5
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.batteryLimit = {'description': 'Physical battery limit [%]', 'severity': 'FATAL', 'range': (0, None)}
+    check.safeThreshold = {'description': 'Safe charge limit threshold [%]', 'severity': 'WARNING', 'range': (0.3, None)}
+
+modelName : payload1
+modelType : payload
+  - STATES
+    state.powerOnOff = False
+    state.currentMode = OFF
+    state.latestMode = OFF
+    state.enableTMHK = True
+    state.dataRate = 0.0
+    state.acquisitionId = {}
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 4000000.0
+    feature.pcduConnection = PCDU1
+    feature.modeAtPowerOn = OFF
+    feature.load = {'OFF': 0, 'SLEEP': 150}
+    feature.dataRateTMHK = 0.01
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.connectedPCDUoff = {'description': 'Check if connected PCDU is OFF when change mode', 'severity': 'ERROR', 'range': (None, None)}
+    check.modelOff = {'description': 'Check if model is OFF at data acquisition action request', 'severity': 'ERROR', 'range': (None, None)}
+    check.unknownMode = {'description': 'Check target mode is supported', 'severity': 'WARNING', 'range': (None, None)}
+
+modelName : NanoCam
+modelType : payload
+  - STATES
+    state.powerOnOff = False
+    state.currentMode = OFF
+    state.latestMode = OFF
+    state.enableTMHK = False
+    state.dataRate = 0.0
+    state.acquisitionId = {}
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 8000000.0
+    feature.pcduConnection = PCDU1
+    feature.modeAtPowerOn = OFF
+    feature.load = {'OFF': 0, 'SLEEP': 5, 'SNAP': 500, 'RECORD': 46}
+    feature.dataRateTMHK = 0.05
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.connectedPCDUoff = {'description': 'Check if connected PCDU is OFF when change mode', 'severity': 'ERROR', 'range': (None, None)}
+    check.modelOff = {'description': 'Check if model is OFF at data acquisition action request', 'severity': 'ERROR', 'range': (None, None)}
+    check.unknownMode = {'description': 'Check target mode is supported', 'severity': 'WARNING', 'range': (None, None)}
+

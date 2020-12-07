@@ -1,0 +1,12 @@
+{
+    "actions": [
+        {
+          "assetId": "GOMX-41",
+          "effectiveTime": 26605218,
+          "type": "data-production",
+          "componentId": "pl11",
+          "duration": 1420,
+          "data": 2.11
+        }
+    ]
+}

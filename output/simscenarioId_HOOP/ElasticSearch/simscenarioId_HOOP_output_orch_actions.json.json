@@ -1,0 +1,2 @@
+{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
+{"timestamp": "timestamp", "simulationId": "simulationId", "reportedTimestamp": "reportedTimestamp", "assetId": "assetId", "componentId": "componentId", "simulationModel": "simulationModel", "type": "type", "name": "name", "value": "value", "unit": "unit"}

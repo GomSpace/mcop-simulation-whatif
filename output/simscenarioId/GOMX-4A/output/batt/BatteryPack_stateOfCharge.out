@@ -1,0 +1,3 @@
+timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
+1607074319,simscenarioId,0,GOMX-4A,BatteryPack,batt,parameter,stateOfCharge,80.0000,[%]
+1607074319,simscenarioId,0,GOMX-4A,BatteryPack,batt,parameter,stateOfCharge,80.0000,[%]

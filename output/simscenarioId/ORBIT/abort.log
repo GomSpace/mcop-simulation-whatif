@@ -1,0 +1,11 @@
+    - id: modemFile
+      description: File containing modem scheme is missing or bad formatted
+      assetId: null
+      componentId: null
+      severity: ABORT
+      range:
+        lower: None
+        upper: None
+      timestamp: 0
+      value: /mcop-simulation-federates/input/modem_scheme.csv
+      message: ERROR MODEM SCHEME FILE: missing file or bad formatting
