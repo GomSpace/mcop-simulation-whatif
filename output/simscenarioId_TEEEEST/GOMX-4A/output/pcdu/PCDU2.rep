@@ -1,0 +1,16 @@
+modelName : PCDU2
+modelType : pcdu
+  - STATES
+    state.mainSource = SolarArray
+    state.currentMode = ON
+    state.load = 0.0
+    state.powerIn = 1500.0
+    state.powerOut = 1500.0
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0.0
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.unknownMode = {'description': 'Check target mode is supported', 'severity': 'WARNING', 'range': (None, None)}
+

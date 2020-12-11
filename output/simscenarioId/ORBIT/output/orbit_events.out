@@ -1,0 +1,6 @@
+timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
+1607636281,simscenarioId,0,GOMX-4A,SolarArray,solararr,orbit,setInsolation,True,NA
+1607636281,simscenarioId,1545000000,GOMX-4A,SolarArray,solararr,orbit,setInsolation,False,NA
+1607636281,simscenarioId,3525000000,GOMX-4A,SolarArray,solararr,orbit,setInsolation,True,NA
+1607636281,simscenarioId,7216000000,GOMX-4A,SolarArray,solararr,orbit,setInsolation,False,NA
+1607636281,simscenarioId,9196000000,GOMX-4A,SolarArray,solararr,orbit,setInsolation,True,NA

@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": 1607636281.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "SolarArray",
+    "simulationModel": "solararr",
+    "type": "orbit",
+    "name": "setInsolation",
+    "value_str": "True",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1607636281.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestamp": 1545000000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "SolarArray",
+    "simulationModel": "solararr",
+    "type": "orbit",
+    "name": "setInsolation",
+    "value_str": "False",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1607636281.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestamp": 3525000000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "SolarArray",
+    "simulationModel": "solararr",
+    "type": "orbit",
+    "name": "setInsolation",
+    "value_str": "True",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1607636281.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestamp": 7216000000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "SolarArray",
+    "simulationModel": "solararr",
+    "type": "orbit",
+    "name": "setInsolation",
+    "value_str": "False",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1607636281.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestamp": 9196000000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "SolarArray",
+    "simulationModel": "solararr",
+    "type": "orbit",
+    "name": "setInsolation",
+    "value_str": "True",
+    "unit": "NA"
+  }
+]
