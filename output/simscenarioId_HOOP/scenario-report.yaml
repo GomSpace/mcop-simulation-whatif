@@ -1,14 +1,14 @@
 summary:
   simulationId: simscenarioId_HOOP
-  status: stopped
+  status: completed
   checks:
-    abort: 1
+    abort: 0
     fatal: 0
     error: 0
     warning: 0
   timings:
-    real: 628
-    simulated: 0
+    real: 41158
+    simulated: 1008000
 outputFiles:
   - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId_HOOP/GOMX-4A/modules.rep
     description: States and Features values at the end of the simulation for GOMX-4A
@@ -17,14 +17,3 @@ outputFiles:
 report:
   checks:
   executionProblems:
-    - id: modemFile
-      description: File containing modem scheme is missing or bad formatted
-      assetId: null
-      componentId: null
-      severity: ABORT
-      range:
-        lower: None
-        upper: None
-      timestamp: 0
-      value: /mcop-simulation-federates/input/modem_scheme.csv
-      message: ERROR MODEM SCHEME FILE: missing file or bad formatting

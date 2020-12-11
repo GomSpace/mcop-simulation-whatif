@@ -17,10 +17,10 @@ modelName : PCDU1
 modelType : pcdu
   - STATES
     state.mainSource = SolarArray
-    state.currentMode = OFF
+    state.currentMode = ON
     state.load = 0.0
-    state.powerIn = 0.0
-    state.powerOut = 0.0
+    state.powerIn = 3000.0
+    state.powerOut = 3000.0
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 0.0
@@ -34,8 +34,8 @@ modelType : batt
   - STATES
     state.dischargingStatus = False
     state.remainingCharge = True
-    state.stateOfCharge = 400000.0
-    state.powerIn = 0.0
+    state.stateOfCharge = 412000.0
+    state.powerIn = 3000.0
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 0.0
@@ -51,7 +51,7 @@ modelType : batt
 modelName : payload1
 modelType : payload
   - STATES
-    state.powerOnOff = False
+    state.powerOnOff = True
     state.currentMode = OFF
     state.latestMode = OFF
     state.enableTMHK = True
@@ -74,7 +74,7 @@ modelType : payload
 modelName : NanoCam
 modelType : payload
   - STATES
-    state.powerOnOff = False
+    state.powerOnOff = True
     state.currentMode = OFF
     state.latestMode = OFF
     state.enableTMHK = False

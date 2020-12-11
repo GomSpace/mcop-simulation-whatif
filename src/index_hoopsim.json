@@ -1,0 +1,22 @@
+{
+  "index_patterns" : [ "hoopsim*"],
+  "settings" : {
+    "number_of_shards" : 5,
+    "number_of_replicas" : 1
+  },
+  "mappings" : {
+    "properties" : {
+      "timestamp": { "type" : "date","format" : "epoch_second"  },
+      "simulationId": { "type" : "keyword"},
+      "reportedTimestamp": { "type" : "float"},
+      "assetId": { "type" : "keyword"},
+      "componentId": { "type" : "keyword"},
+      "simulationModel": { "type" : "keyword"},
+      "type": { "type" : "keyword"},
+      "name": { "type" : "keyword"},
+      "value": { "type" : "float"},
+      "unit": { "type" : "float"}
+      
+            }
+          }
+        }

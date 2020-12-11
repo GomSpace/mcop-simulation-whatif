@@ -1,4 +1,0 @@
-timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
-1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,load,0.0000,[W]
-1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,load,0.0000,[W]
-1607074319,simscenarioId,0,GOMX-4A,Rx,receiver,parameter,load,0.0000,[W]

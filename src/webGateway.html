@@ -3,39 +3,74 @@
 <title>HOOPSIM-whatif</title>
 <style>
 body {
-    background-color: #eeeeee;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(46, 55, 72);
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: rgb(232, 238, 246);
 }
-h1 {
-    background-color: #8ac9e2;
+#title {
+    background-color: rgb(26, 32, 44);
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    color: rgb(232, 238, 246);
 }
+
 button {
-    background-color: #2a6c92;
-    color: #eeeeee;
+
+    background-color: rgb(74, 152, 223);
+    color: rgb(232, 238, 246);
+    border-radius: 5px;
+    border: none;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+button:hover {background-color: rgb(236, 48, 48)}
+
+input{
+    background-color: rgb(74, 85, 103);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(232, 238, 246);
+    border-radius: 5px;
+    border: none;
+}
+
+#exportBlock{
+    background-color: rgba(26, 32, 44, 0.322);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 </style>
 </header>
 
 <body>
-<h1>
-<SCRIPT LANGUAGE="javascript">
-document.write('<DIV>'+"HOOP SIMULATION - WHAT IF ANALYSIS TOOL"+'</DIV>');
-</SCRIPT>
-</h1>
+<div id='title'>
+    <h1>
+        HOOP SIMULATION / WHAT IF ANALYSIS TOOL
+    </h1>
+</div>
+
 <form id='myForm'>
         
 <label>simulation-scenario-bundle: </label>
-<input type="text" name="scenarioFile" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/src/simulation-scenario-bundle.json" size="80"/>
+<input type="text" name="scenarioFile" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/output/scenario-bundle-HOOP-compatible.json" size="80"/>
 <br>
 
 <label>output folder: </label>
 <input type="text" name="outputFolder" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/output/" size="80"/>
 <p></p>
 
-<button id='button' type="submit" onclick="testCere(this); return false;" name="openScenarioFile">open simulation-scenario-bundle</button>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="openScenarioFile"><b>> OPEN SCENARIO FILE </b></button>
 <p></p>
 
 <!-- <a href="file://http://127.0.0.1:8080/C:/Users/maan/projects/mcop-simulation-whatif/src/simulation-scenario-bundle.json" target="_blank">file.ext</a>
@@ -50,29 +85,29 @@ document.write('<DIV>'+"HOOP SIMULATION - WHAT IF ANALYSIS TOOL"+'</DIV>');
 <input type="text" name="periodicUpdate" value="600" size="80"/>
 <br>
 <label>modem modulation scheme: </label>
-<input type="text" name="modemModulationFile" value="/mcop-simulation-federates/input/modem_scheme.csv" size="80"/>
+<input type="text" name="modemModulationFile" value="/mnt/c/users/maan/projects/mcop-simulation-federates/input/modem_scheme.csv" size="80"/>
 <p></p>
-<button id='button' type="submit" onclick="testCere(this); return false;" name="runSimulation">RUN SIMULATION</button>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
 
-<button id='button' type="submit" onclick="testCere(this); return false;" name="kibanaOutput">KIBANA output</button>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="kibanaOutput"><b>> KIBANA</b></button>
 <p></p>
 
+<div id="exportBlock">
 <h4>HOOP simulation-scenario-bundle EXPORT</h4>
 <p>
         <label>HOOP simulation-scenario-bundle: </label>
         <input type="text" name="HOOPscenarioFile" value="/mnt/c/users/maan/projects/mcop-simulation-whatif/src/scenario-bundle-HOOP.json" size="80"/>
         <p></p>
-        Click on "export" to convert scenario in HOOP simulation-scenario-bundle <br>
-        into a scenario compatible with the What If analysis. <br>
-
+        Click on "export" to convert scenario in HOOP simulation-scenario-bundle into a scenario compatible with the What If analysis. <br>
         The generated file will be exported to the output folder.
 
 </p>
 <p></p>
-<button id='button' type="submit" onclick="testCere(this); return false;" name="exportHoopScenarioFile">EXPORT</button>
+<button id='button' type="submit" onclick="testCere(this); return false;" name="exportHoopScenarioFile"><b>> EXPORT</b></button>
 <label>file name: </label>
-<input type="text" name="HOOPscenarioCompatibleFileName" value="scenario-bundle-HOOP-simulation-compatible" size="80"/>
+<input type="text" name="HOOPscenarioCompatibleFileName" value="scenario-bundle-HOOP-compatible" size="80"/>
 <p></p>
+</div>
 
 <!-- 
 <script>

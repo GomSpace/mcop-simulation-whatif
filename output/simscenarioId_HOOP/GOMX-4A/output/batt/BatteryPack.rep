@@ -3,8 +3,8 @@ modelType : batt
   - STATES
     state.dischargingStatus = False
     state.remainingCharge = True
-    state.stateOfCharge = 400000.0
-    state.powerIn = 0.0
+    state.stateOfCharge = 412000.0
+    state.powerIn = 3000.0
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 0.0

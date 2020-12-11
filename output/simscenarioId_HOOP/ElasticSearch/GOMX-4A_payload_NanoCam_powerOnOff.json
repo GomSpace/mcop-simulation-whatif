@@ -1,4 +1,86 @@
-{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
-{"timestamp": "timestamp", "simulationId": "simulationId", "reportedTimestamp": "reportedTimestamp", "assetId": "assetId", "componentId": "componentId", "simulationModel": "simulationModel", "type": "type", "name": "name", "value": "value", "unit": "unit"}
-{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
-{"timestamp": "1607331551", "simulationId": "simscenarioId_HOOP", "reportedTimestamp": "0", "assetId": "GOMX-4A", "componentId": "NanoCam", "simulationModel": "payload", "type": "parameter", "name": "powerOnOff", "value": "False", "unit": ""}
+[
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "False",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 8000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "False",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 600000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "False",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "False",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "True",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "True",
+    "unit": ""
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1008000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "parameter",
+    "name": "powerOnOff",
+    "value_str": "True",
+    "unit": ""
+  }
+]

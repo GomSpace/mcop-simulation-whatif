@@ -2,10 +2,10 @@ modelName : PCDU1
 modelType : pcdu
   - STATES
     state.mainSource = SolarArray
-    state.currentMode = OFF
-    state.load = 0.0
-    state.powerIn = 0.0
-    state.powerOut = 0.0
+    state.currentMode = ON
+    state.load = 150.0
+    state.powerIn = 3000.0
+    state.powerOut = 2850.0
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 0.0

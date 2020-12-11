@@ -1,7 +1,7 @@
 modelName : NanoCam
 modelType : payload
   - STATES
-    state.powerOnOff = False
+    state.powerOnOff = True
     state.currentMode = OFF
     state.latestMode = OFF
     state.enableTMHK = False

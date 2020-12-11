@@ -1,2 +1,8 @@
 timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
-1607331551,simscenarioId_HOOP,0,GOMX-4A,NanoCam,payload,parameter,powerOnOff,False,
+1607676502,simscenarioId_HOOP,0,GOMX-4A,NanoCam,payload,parameter,powerOnOff,False,
+1607676502,simscenarioId_HOOP,8000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,False,
+1607676502,simscenarioId_HOOP,600000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,False,
+1607676502,simscenarioId_HOOP,1004000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,False,
+1607676502,simscenarioId_HOOP,1004000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,True,
+1607676502,simscenarioId_HOOP,1004000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,True,
+1607676502,simscenarioId_HOOP,1008000,GOMX-4A,NanoCam,payload,parameter,powerOnOff,True,

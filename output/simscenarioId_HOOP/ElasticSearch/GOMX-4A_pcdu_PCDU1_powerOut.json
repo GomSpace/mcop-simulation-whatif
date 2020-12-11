@@ -1,6 +1,158 @@
-{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
-{"timestamp": "timestamp", "simulationId": "simulationId", "reportedTimestamp": "reportedTimestamp", "assetId": "assetId", "componentId": "componentId", "simulationModel": "simulationModel", "type": "type", "name": "name", "value": "value", "unit": "unit"}
-{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
-{"timestamp": "1607331551", "simulationId": "simscenarioId_HOOP", "reportedTimestamp": "0", "assetId": "GOMX-4A", "componentId": "PCDU1", "simulationModel": "pcdu", "type": "parameter", "name": "powerOut", "value": "0.0000", "unit": "[W]"}
-{"index": {"_index": "HOOPSIM", "_type": "out", "_id": "1"}}
-{"timestamp": "1607331551", "simulationId": "simscenarioId_HOOP", "reportedTimestamp": "0", "assetId": "GOMX-4A", "componentId": "PCDU1", "simulationModel": "pcdu", "type": "parameter", "name": "powerOut", "value": "0.0000", "unit": "[W]"}
+[
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 0.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 4000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 8000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 600000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 0.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 3000.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 3000.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1004000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 3000.0,
+    "unit": "[W]"
+  },
+  {
+    "timestamp": 1607676502.0,
+    "simulationId": "simscenarioId_HOOP",
+    "reportedTimestamp": 1008000.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "parameter",
+    "name": "powerOut",
+    "value_number": 3000.0,
+    "unit": "[W]"
+  }
+]

@@ -1,2 +1,0 @@
-timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
-1607074319,simscenarioId,0,GOMX-4A,Memory,storageunit,parameter,stateOfData,52.0000,[%]

@@ -1,8 +1,8 @@
 {
   "simulation": {
-    "id": "scenarioId_HOOP",
-    "startTimestamp": 1602535991000,
-    "endTimestamp": 1602536999000,
+    "id": "scenarioId",
+    "startTimestamp": 1602446591000,
+    "endTimestamp": 1602456591000,
     "actionTimeOffset": 0
   },
   "assets": [
@@ -110,7 +110,7 @@
                 "simId": "currentMode"
               },
               "value": "OFF",
-              "reportedTimestamp": 4000
+              "reportedTimestamp": 5000
             },
             {
               "id": "powerConsumptionMode-SLEEP",
@@ -175,7 +175,7 @@
                 "simId": "currentMode"
               },
               "value": "OFF",
-              "reportedTimestamp": 8000
+              "reportedTimestamp": 2884000
             },
             {
               "id": "powerConsumptionMode-SLEEP",
@@ -248,7 +248,7 @@
   "actions": [
     {
       "assetId": "GOMX-4A",
-      "effectiveTime": 1004000,
+      "effectiveTime": 35000,
       "type": "parameter-change",
       "componentId": "PCDU1",
       "parameterId": "currentMode",
@@ -256,7 +256,7 @@
     },
     {
       "assetId": "GOMX-4A",
-      "effectiveTime": 1008000,
+      "effectiveTime": 36000,
       "type": "parameter-change",
       "componentId": "payload1",
       "parameterId": "currentMode",
@@ -264,7 +264,7 @@
     }
   ],
   "checks": [
-    {
+      {
       "id": "safeThreshold",
       "name": "Battery Safety Threshold",
       "description": "Safety threshold for the battery State Of Charge [%]",
@@ -272,7 +272,7 @@
       "componentId": "BatteryPack",
       "severity": "WARNING",
       "range": {
-        "lower": 0.3,
+        "lower": 0.5,
         "upper": null
       }
     }

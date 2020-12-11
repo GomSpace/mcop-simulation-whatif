@@ -7,50 +7,32 @@
     (attribute privilegeToDeleteObject reliable timestamp)
     (class RTIprivate)
     (class OBC
-       (attribute storageunit__setRunning reliable timestamp)
-       (attribute storageunit__setTimeEventList reliable timestamp)
        (attribute batt__setRunning reliable timestamp)
        (attribute batt__setTimeEventList reliable timestamp)
        (attribute payload__setRunning reliable timestamp)
        (attribute payload__setTimeEventList reliable timestamp)
        (attribute pcdu__setRunning reliable timestamp)
        (attribute pcdu__setTimeEventList reliable timestamp)
-       (attribute receiver__setRunning reliable timestamp)
-       (attribute receiver__setTimeEventList reliable timestamp)
-       (attribute receiver__setAntGSavailability reliable timestamp)
-       (attribute transmitter__setRunning reliable timestamp)
-       (attribute transmitter__setTimeEventList reliable timestamp)
-       (attribute transmitter__setAntGSavailability reliable timestamp)
        (attribute solararr__setRunning reliable timestamp)
        (attribute solararr__setTimeEventList reliable timestamp)
-       (attribute target_GOMX-4A_payload1_setCurrentMode reliable timestamp)
        (attribute target_GOMX-4A_PCDU1_setCurrentMode reliable timestamp)
+       (attribute target_GOMX-4A_payload1_setCurrentMode reliable timestamp)
        (attribute ABORT reliable timestamp)
        (attribute ORBIT_ABORT reliable timestamp)
     )  ;; end OBC
     (class ORBIT
        (attribute ABORT reliable timestamp)
-       (attribute storageunit__setTimeEventList reliable timestamp)
        (attribute batt__setTimeEventList reliable timestamp)
        (attribute payload__setTimeEventList reliable timestamp)
        (attribute pcdu__setTimeEventList reliable timestamp)
-       (attribute receiver__setTimeEventList reliable timestamp)
-       (attribute transmitter__setTimeEventList reliable timestamp)
        (attribute solararr__setTimeEventList reliable timestamp)
        (attribute target_GOMX-4A_SolarArray_setInsolation reliable timestamp)
-       (attribute target_GOMX-4A_Rx_setContact reliable timestamp)
-       (attribute target_GOMX-4A_Rx_setAntGSavailability reliable timestamp)
-       (attribute target_GOMX-4A_Tx_setContact reliable timestamp)
-       (attribute target_GOMX-4A_Tx_setAntGSavailability reliable timestamp)
     )  ;; end ORBIT
     (class pcdu
       (attribute ABORT reliable timestamp)
       (attribute output_GOMX-4A_PCDU1_setTimeEvent reliable timestamp)
       (attribute output_GOMX-4A_PCDU1_setBattPower reliable timestamp)
       (attribute output_GOMX-4A_PCDU1_setPowerOnOff reliable timestamp)
-      (attribute output_GOMX-4A_PCDU2_setTimeEvent reliable timestamp)
-      (attribute output_GOMX-4A_PCDU2_setBattPower reliable timestamp)
-      (attribute output_GOMX-4A_PCDU2_setPowerOnOff reliable timestamp)
     ) ;; End pcdu
     (class batt
       (attribute ABORT reliable timestamp)
@@ -74,23 +56,12 @@
     ) ;; End payload
     (class storageunit
       (attribute ABORT reliable timestamp)
-      (attribute output_GOMX-4A_Memory_setTimeEvent reliable timestamp)
     ) ;; End storageunit
     (class receiver
       (attribute ABORT reliable timestamp)
-      (attribute output_GOMX-4A_Rx_setTimeEvent reliable timestamp)
-      (attribute output_GOMX-4A_Rx_setLoad reliable timestamp)
-      (attribute output_GOMX-4A_Rx_setReception reliable timestamp)
-      (attribute output_GOMX-4A_Rx_setDataRate reliable timestamp)
-      (attribute output_GOMX-4A_Rx_setAntGSavailability reliable timestamp)
     ) ;; End receiver
     (class transmitter
       (attribute ABORT reliable timestamp)
-      (attribute output_GOMX-4A_Tx_setTimeEvent reliable timestamp)
-      (attribute output_GOMX-4A_Tx_setLoad reliable timestamp)
-      (attribute output_GOMX-4A_Tx_setTransmission reliable timestamp)
-      (attribute output_GOMX-4A_Tx_setDataRate reliable timestamp)
-      (attribute output_GOMX-4A_Tx_setAntGSavailability reliable timestamp)
     ) ;; End transmitter
     (class transceiver
       (attribute ABORT reliable timestamp)

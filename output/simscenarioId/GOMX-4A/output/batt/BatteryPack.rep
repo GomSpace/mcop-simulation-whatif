@@ -3,8 +3,8 @@ modelType : batt
   - STATES
     state.dischargingStatus = False
     state.remainingCharge = True
-    state.stateOfCharge = 400000.0
-    state.powerIn = 0.0
+    state.stateOfCharge = 500000
+    state.powerIn = 2850.0
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 0.0
@@ -15,5 +15,5 @@ modelType : batt
     check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
     check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
     check.batteryLimit = {'description': 'Physical battery limit [%]', 'severity': 'FATAL', 'range': (0, None)}
-    check.safeThreshold = {'description': 'Safe charge limit threshold [%]', 'severity': 'WARNING', 'range': (0.3, None)}
+    check.safeThreshold = {'description': 'Safe charge limit threshold [%]', 'severity': 'WARNING', 'range': (0.5, None)}
 

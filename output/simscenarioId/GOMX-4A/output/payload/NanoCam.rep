@@ -1,7 +1,7 @@
 modelName : NanoCam
 modelType : payload
   - STATES
-    state.powerOnOff = False
+    state.powerOnOff = True
     state.currentMode = OFF
     state.latestMode = OFF
     state.enableTMHK = False
@@ -10,7 +10,7 @@ modelType : payload
   - FEATURES
     feature.debugLevel = 20
     feature.runningTimestamp = 2884000000.0
-    feature.pcduConnection = PCDU2
+    feature.pcduConnection = PCDU1
     feature.modeAtPowerOn = OFF
     feature.load = {'OFF': 0, 'SLEEP': 5, 'SNAP': 500, 'RECORD': 46}
     feature.dataRateTMHK = 0.05
