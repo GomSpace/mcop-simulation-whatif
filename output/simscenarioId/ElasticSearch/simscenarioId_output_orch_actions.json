@@ -1,0 +1,54 @@
+[
+  {
+    "timestamp": 1608566507.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestampRel": 5000000.0,
+    "reportedTimestampAbs": 16029465910.0,
+    "assetId": "GOMX-4A",
+    "componentId": "payload1",
+    "simulationModel": "payload",
+    "type": "action",
+    "name": "setRunning",
+    "valueString": "True",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1608566507.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestampRel": 35000000.0,
+    "reportedTimestampAbs": 16059465910.0,
+    "assetId": "GOMX-4A",
+    "componentId": "PCDU1",
+    "simulationModel": "pcdu",
+    "type": "action",
+    "name": "setCurrentMode",
+    "valueString": "ON",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1608566507.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestampRel": 36000000.0,
+    "reportedTimestampAbs": 16060465910.0,
+    "assetId": "GOMX-4A",
+    "componentId": "payload1",
+    "simulationModel": "payload",
+    "type": "action",
+    "name": "setCurrentMode",
+    "valueString": "SLEEP",
+    "unit": "NA"
+  },
+  {
+    "timestamp": 1608566507.0,
+    "simulationId": "simscenarioId",
+    "reportedTimestampRel": 2884000000.0,
+    "reportedTimestampAbs": 18908465910.0,
+    "assetId": "GOMX-4A",
+    "componentId": "NanoCam",
+    "simulationModel": "payload",
+    "type": "action",
+    "name": "setRunning",
+    "valueString": "True",
+    "unit": "NA"
+  }
+]

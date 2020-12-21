@@ -1,0 +1,19 @@
+modelName : BatteryPack
+modelType : batt
+  - STATES
+    state.dischargingStatus = False
+    state.remainingCharge = True
+    state.stateOfCharge = 500000
+    state.powerIn = 2850.0
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0.0
+    feature.storageCapacity = 500000
+    feature.p = 0.0005
+    feature.c = 0.5
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.batteryLimit = {'description': 'Physical battery limit [%]', 'severity': 'FATAL', 'range': (0, None)}
+    check.safeThreshold = {'description': 'Safe charge limit threshold [%]', 'severity': 'WARNING', 'range': (0.5, None)}
+

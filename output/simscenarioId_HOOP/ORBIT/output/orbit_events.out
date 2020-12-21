@@ -1,0 +1,2 @@
+timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
+1608569630,simscenarioId_HOOP,0,GOMX-4A,SolarArray,solararr,orbit,setInsolation,True,NA

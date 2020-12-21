@@ -1,0 +1,19 @@
+summary:
+  simulationId: simscenarioId_HOOP
+  status: completed
+  checks:
+    abort: 0
+    fatal: 0
+    error: 0
+    warning: 0
+  timings:
+    real: 41627
+    simulated: 1008000
+outputFiles:
+  - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId_HOOP/GOMX-4A/modules.rep
+    description: States and Features values at the end of the simulation for GOMX-4A
+  - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId_HOOP/GOMX-4A/output/
+    description: "Timetrend values for GOMX-4A, simulated models {'SolarArray': 'solararr', 'PCDU1': 'pcdu', 'BatteryPack': 'batt', 'payload1': 'payload', 'NanoCam': 'payload'}"
+report:
+  checks:
+  executionProblems:

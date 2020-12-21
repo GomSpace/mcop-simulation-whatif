@@ -1,0 +1,41 @@
+summary:
+  simulationId: simscenarioId
+  status: completed
+  checks:
+    abort: 0
+    fatal: 0
+    error: 0
+    warning: 2
+  timings:
+    real: 41778
+    simulated: 10000000
+outputFiles:
+  - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId/GOMX-4A/modules.rep
+    description: States and Features values at the end of the simulation for GOMX-4A
+  - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId/GOMX-4A/output/
+    description: "Timetrend values for GOMX-4A, simulated models {'SolarArray': 'solararr', 'PCDU1': 'pcdu', 'BatteryPack': 'batt', 'payload1': 'payload', 'NanoCam': 'payload'}"
+report:
+  checks:
+    - id: safeThreshold
+      description: Safe charge limit threshold [%]
+      assetId: GOMX-4A
+      componentId: BatteryPack
+      severity: WARNING
+      range:
+        lower: 0.5
+        upper: None
+      timestamp: 3525000
+      value: 0.4060
+      message: "Battery charge at 203000 J, below limit of 250000 J, as the 50.00 % of total capacity"
+    - id: safeThreshold
+      description: Safe charge limit threshold [%]
+      assetId: GOMX-4A
+      componentId: BatteryPack
+      severity: WARNING
+      range:
+        lower: 0.5
+        upper: None
+      timestamp: 9000000
+      value: 0.4648
+      message: "Battery charge at 232400 J, below limit of 250000 J, as the 50.00 % of total capacity"
+  executionProblems:

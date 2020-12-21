@@ -1,0 +1,19 @@
+modelName : Memory
+modelType : storageunit
+  - STATES
+    state.remainingStorage = True
+    state.stateOfData = 701.25
+    state.dataRate = 0.0
+    state.dataChunk = 0.0
+    state.receiving = False
+    state.transmitting = False
+  - FEATURES
+    feature.debugLevel = 20
+    feature.runningTimestamp = 0.0
+    feature.storageCapacity = 1000
+  - CHECKS
+    check.scenarioBundleFormatting = {'description': 'Error on scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.missingParameterTimeStamp = {'description': 'Miss reportedTimestamp in scenario-bundle', 'severity': 'ABORT', 'range': (None, None)}
+    check.memoryLimit = {'description': 'Physical memory limit [%]', 'severity': 'FATAL', 'range': (0, None)}
+    check.safeThreshold = {'description': 'Safe memory limit threshold [%]', 'severity': 'ERROR', 'range': (0, 0.85)}
+

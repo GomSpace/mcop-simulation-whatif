@@ -1,0 +1,22 @@
+    - id: safeThreshold
+      description: Safe charge limit threshold [%]
+      assetId: GOMX-4A
+      componentId: BatteryPack
+      severity: WARNING
+      range:
+        lower: 0.5
+        upper: None
+      timestamp: 3525000
+      value: 0.4060
+      message: "Battery charge at 203000 J, below limit of 250000 J, as the 50.00 % of total capacity"
+    - id: safeThreshold
+      description: Safe charge limit threshold [%]
+      assetId: GOMX-4A
+      componentId: BatteryPack
+      severity: WARNING
+      range:
+        lower: 0.5
+        upper: None
+      timestamp: 9000000
+      value: 0.4648
+      message: "Battery charge at 232400 J, below limit of 250000 J, as the 50.00 % of total capacity"

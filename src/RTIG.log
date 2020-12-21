@@ -1,0 +1,162 @@
+date	fed-o	fed	type	level	status	comment
+1608569630	0	0	128	10	0	
+1608569632	0	0	3	9	0	Federation Name : HOOPSIM_whatIf, Handle : 1 created - OK
+1608569632	0	0	5	9	0	Federate "orch_f" joins Federation "HOOPSIM_whatIf"(1) with handle 1. Socket 6 - OK
+1608569632	1	1	8	8	0	ON at time 1.000000 - OK
+1608569632	1	1	9	8	0	ON at time 0.000000 - OK
+1608569632	1	1	12	8	0	Label "_readyToPopulate" registered. Tag is "Waiting All Federates to populate RTI" - OK
+1608569632	1	1	12	8	0	Label "_readyToShareTimeOBC" registered. Tag is "Waiting All Federates to share time tag ORCHESTRATOR list in RTI" - OK
+1608569632	1	1	12	8	0	Label "_readyToShareTimeORBIT" registered. Tag is "Waiting All Federates to share time tag ORBIT list in RTI" - OK
+1608569632	1	1	12	8	0	Label "_readyToSetTime" registered. Tag is "Waiting All Federates to set the time tag list in RTI" - OK
+1608569632	1	1	12	8	0	Label "_readyToRun" registered. Tag is "Waiting All Federates to run" - OK
+1608569632	1	1	12	8	0	Label "_readyToResign" registered. Tag is "Waiting All Federates to resign" - OK
+1608569641	0	0	3	10	36	Federation Name : HOOPSIM_whatIf, Handle : 2HOOPSIM_whatIf - Exception
+1608569641	0	0	5	9	0	Federate "orbit_f" joins Federation "HOOPSIM_whatIf"(1) with handle 2. Socket 7 - OK
+1608569641	1	2	8	8	0	ON at time 1.000000 - OK
+1608569641	1	2	9	8	0	ON at time 0.000000 - OK
+1608569641	1	2	15	8	0	Label "_readyToPopulate" ended - OK
+1608569642	0	0	3	10	36	Federation Name : HOOPSIM_whatIf, Handle : 3HOOPSIM_whatIf - Exception
+1608569642	0	0	5	9	0	Federate "payload_f" joins Federation "HOOPSIM_whatIf"(1) with handle 3. Socket 8 - OK
+1608569642	1	3	8	8	0	ON at time 1.000000 - OK
+1608569642	1	3	9	8	0	ON at time 0.000000 - OK
+1608569642	1	3	15	8	0	Label "_readyToPopulate" ended - OK
+1608569645	0	0	3	10	36	Federation Name : HOOPSIM_whatIf, Handle : 4HOOPSIM_whatIf - Exception
+1608569645	0	0	5	9	0	Federate "pcdu_f" joins Federation "HOOPSIM_whatIf"(1) with handle 4. Socket 9 - OK
+1608569645	1	4	8	8	0	ON at time 1.000000 - OK
+1608569645	1	4	9	8	0	ON at time 0.000000 - OK
+1608569645	1	4	15	8	0	Label "_readyToPopulate" ended - OK
+1608569648	0	0	3	10	36	Federation Name : HOOPSIM_whatIf, Handle : 5HOOPSIM_whatIf - Exception
+1608569649	0	0	5	9	0	Federate "solararr_f" joins Federation "HOOPSIM_whatIf"(1) with handle 5. Socket 10 - OK
+1608569649	1	5	8	8	0	ON at time 1.000000 - OK
+1608569649	1	5	9	8	0	ON at time 0.000000 - OK
+1608569649	1	5	15	8	0	Label "_readyToPopulate" ended - OK
+1608569651	0	0	3	10	36	Federation Name : HOOPSIM_whatIf, Handle : 6HOOPSIM_whatIf - Exception
+1608569651	0	0	5	9	0	Federate "batt_f" joins Federation "HOOPSIM_whatIf"(1) with handle 6. Socket 11 - OK
+1608569651	1	6	8	8	0	ON at time 1.000000 - OK
+1608569652	1	6	9	8	0	ON at time 0.000000 - OK
+1608569652	1	6	15	8	0	Label "_readyToPopulate" ended - OK
+1608569666	1	1	15	8	0	Label "_readyToPopulate" ended - OK
+1608569666	1	5	33	7	0	Publish Object Class = 7, # of att. = 3 - OK
+1608569666	1	6	33	7	0	Publish Object Class = 6, # of att. = 2 - OK
+1608569666	1	2	33	7	0	Publish Object Class = 4, # of att. = 6 - OK
+1608569666	1	5	43	6	0	Register Object Class = 7 - OK
+1608569666	1	6	43	6	0	Register Object Class = 6 - OK
+1608569666	1	4	33	7	0	Publish Object Class = 5, # of att. = 4 - OK
+1608569666	1	2	43	6	0	Register Object Class = 4 - OK
+1608569666	1	3	33	7	0	Publish Object Class = 8, # of att. = 9 - OK
+1608569666	1	4	43	6	0	Register Object Class = 5 - OK
+1608569666	1	1	33	7	0	Publish Object Class = 3, # of att. = 12 - OK
+1608569666	1	3	43	6	0	Register Object Class = 8 - OK
+1608569666	1	1	43	6	0	Register Object Class = 3 - OK
+1608569666	1	5	37	7	0	Subscribe Object Class = 3, # of att. = 3 - OK
+1608569666	1	2	37	7	0	Subscribe Object Class = 3, # of att. = 1 - OK
+1608569666	1	6	37	7	0	Subscribe Object Class = 3, # of att. = 3 - OK
+1608569666	1	1	37	7	0	Subscribe Object Class = 4, # of att. = 1 - OK
+1608569666	1	4	37	7	0	Subscribe Object Class = 3, # of att. = 4 - OK
+1608569666	1	3	37	7	0	Subscribe Object Class = 3, # of att. = 4 - OK
+1608569666	1	5	37	7	0	Subscribe Object Class = 4, # of att. = 2 - OK
+1608569666	1	2	37	7	0	Subscribe Object Class = 7, # of att. = 1 - OK
+1608569666	1	6	37	7	0	Subscribe Object Class = 4, # of att. = 1 - OK
+1608569666	1	4	37	7	0	Subscribe Object Class = 4, # of att. = 1 - OK
+1608569666	1	1	37	7	0	Subscribe Object Class = 8, # of att. = 1 - OK
+1608569666	1	3	37	7	0	Subscribe Object Class = 4, # of att. = 1 - OK
+1608569666	1	5	37	7	0	Subscribe Object Class = 5, # of att. = 0 - OK
+1608569666	1	6	37	7	0	Subscribe Object Class = 5, # of att. = 1 - OK
+1608569666	1	2	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	1	37	7	0	Subscribe Object Class = 5, # of att. = 1 - OK
+1608569666	1	5	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	4	37	7	0	Subscribe Object Class = 8, # of att. = 2 - OK
+1608569666	1	3	37	7	0	Subscribe Object Class = 5, # of att. = 2 - OK
+1608569666	1	6	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	1	37	7	0	Subscribe Object Class = 7, # of att. = 1 - OK
+1608569666	1	4	37	7	0	Subscribe Object Class = 7, # of att. = 1 - OK
+1608569666	1	3	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	1	37	7	0	Subscribe Object Class = 6, # of att. = 1 - OK
+1608569666	1	4	37	7	0	Subscribe Object Class = 6, # of att. = 0 - OK
+1608569666	1	1	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	4	15	8	0	Label "_readyToShareTimeOBC" ended - OK
+1608569666	1	2	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	6	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	4	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	3	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	5	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	1	15	8	0	Label "_readyToShareTimeORBIT" ended - OK
+1608569666	1	6	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	3	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	1	56	6	0	ObjID = 3 - OK
+1608569666	1	4	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	5	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	1	56	6	0	ObjID = 5 - OK
+1608569666	1	1	56	6	0	ObjID = 4 - OK
+1608569666	1	1	56	6	0	ObjID = 1 - OK
+1608569666	1	1	56	6	0	ObjID = 2 - OK
+1608569666	1	2	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	1	15	8	0	Label "_readyToSetTime" ended - OK
+1608569666	1	2	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	1	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	5	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	6	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	3	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	4	15	8	0	Label "_readyToRun" ended - OK
+1608569666	1	2	56	6	0	ObjID = 6 - OK
+1608569666	1	2	56	6	0	ObjID = 1 - OK
+1608569666	1	3	56	6	0	ObjID = 6 - OK
+1608569666	1	4	56	6	0	ObjID = 6 - OK
+1608569666	1	5	56	6	0	ObjID = 6 - OK
+1608569666	1	3	56	6	0	ObjID = 3 - OK
+1608569666	1	6	56	6	0	ObjID = 6 - OK
+1608569666	1	4	56	6	0	ObjID = 3 - OK
+1608569666	1	5	56	6	0	ObjID = 3 - OK
+1608569666	1	3	56	6	0	ObjID = 4 - OK
+1608569666	1	6	56	6	0	ObjID = 3 - OK
+1608569666	1	4	56	6	0	ObjID = 5 - OK
+1608569666	1	6	56	6	0	ObjID = 4 - OK
+1608569666	1	4	56	6	0	ObjID = 1 - OK
+1608569666	1	2	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	1	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	5	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	6	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	4	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	3	15	8	0	Label "_readyToResign" ended - OK
+1608569666	1	4	49	10	19	Delete ObjID = 1 - Exception
+1608569666	1	4	49	10	19	Delete ObjID = 3 - Exception
+1608569666	1	3	49	10	19	Delete ObjID = 3 - Exception
+1608569666	1	4	49	6	0	Delete ObjID = 4 - OK
+1608569666	1	3	49	10	63	Delete ObjID = 4Object <4> not found in map set. - Exception
+1608569666	1	3	49	6	0	Delete ObjID = 5 - OK
+1608569666	1	6	49	6	0	Delete ObjID = 2 - OK
+1608569666	1	5	49	6	0	Delete ObjID = 1 - OK
+1608569666	1	4	49	10	63	Delete ObjID = 5Object <5> not found in map set. - Exception
+1608569666	1	3	49	10	19	Delete ObjID = 6 - Exception
+1608569666	1	4	49	10	19	Delete ObjID = 6 - Exception
+1608569666	1	3	8	8	0	OFF - OK
+1608569666	1	6	49	10	19	Delete ObjID = 3 - Exception
+1608569666	1	6	49	10	63	Delete ObjID = 4Object <4> not found in map set. - Exception
+1608569666	1	6	49	10	19	Delete ObjID = 6 - Exception
+1608569666	1	5	49	10	19	Delete ObjID = 3 - Exception
+1608569666	1	6	8	8	0	OFF - OK
+1608569666	1	6	7	9	0	Federate 6 resign federation(1) - OK
+1608569666	1	5	49	10	19	Delete ObjID = 6 - Exception
+1608569666	1	4	8	8	0	OFF - OK
+1608569666	1	5	8	8	0	OFF - OK
+1608569666	1	5	7	9	0	Federate 5 resign federation(1) - OK
+1608569666	1	4	7	9	0	Federate 4 resign federation(1) - OK
+1608569666	1	3	7	9	0	Federate 3 resign federation(1) - OK
+1608569667	0	0	1	9	0	Socket 11 - OK
+1608569667	0	0	1	9	0	Socket 10 - OK
+1608569667	0	0	1	9	0	Socket 9 - OK
+1608569667	0	0	1	9	0	Socket 8 - OK
+1608569671	1	2	49	10	63	Delete ObjID = 1Object <1> not found in map set. - Exception
+1608569671	1	2	49	6	0	Delete ObjID = 3 - OK
+1608569671	1	2	49	10	19	Delete ObjID = 6 - Exception
+1608569671	1	2	8	8	0	OFF - OK
+1608569671	1	2	7	9	0	Federate 2 resign federation(1) - OK
+1608569672	0	0	1	9	0	Socket 7 - OK
+1608569678	1	1	49	10	63	Delete ObjID = 1Object <1> not found in map set. - Exception
+1608569678	1	1	49	10	63	Delete ObjID = 2Object <2> not found in map set. - Exception
+1608569678	1	1	49	10	63	Delete ObjID = 3Object <3> not found in map set. - Exception
+1608569678	1	1	49	10	63	Delete ObjID = 4Object <4> not found in map set. - Exception
+1608569678	1	1	49	10	63	Delete ObjID = 5Object <5> not found in map set. - Exception
+1608569678	1	1	49	6	0	Delete ObjID = 6 - OK
+1608569678	1	1	8	8	0	OFF - OK
+1608569678	1	1	7	9	0	Federate 1 resign federation(1) - OK
