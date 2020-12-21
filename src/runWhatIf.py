@@ -8,6 +8,7 @@ import logging.config
 import http.server
 import threading
 import subprocess
+import webbrowser
 
 import serviceHandler
 
@@ -39,11 +40,11 @@ def parse_args():
                         type=str,
                         default='webserver',
                         help='Input mode launching the simulation platform (''webserver'' launches a webserver that wait for a form to be input; ''direct'' directly processes the command line arguments to launch the supervisor', metavar = 'webserver or direct')
-    parser.add_argument('-ha', '--http-listen-address',
+    parser.add_argument('-ha', '--httpListenAddress',
                         type=str,
                         default='127.0.0.1',
                         help='Embedded webserver listen address', metavar='127.0.0.1 or ::')
-    parser.add_argument('-hp', '--http-listen-port',
+    parser.add_argument('-hp', '--httpListenPort',
                         type=int,
                         default=8080,
                         help='Embedded webserver listen port', metavar='8080')
@@ -80,7 +81,8 @@ def main(args):
             server_handler.assassin = threading.Thread(target=server.shutdown)
             server_handler.assassin.daemon = True
 
-            
+            os.system(f'xdg-open http://{args.httpListenAddress}:{args.httpListenPort}/')
+
             #Wait forever for incoming http requests
             server.serve_forever()
 

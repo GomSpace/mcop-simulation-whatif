@@ -41,7 +41,9 @@ os.environ["PYTHONPATH"] = paths + ":" + ("" if os.environ.get("PYTHONPATH") == 
 # is need to establish there here in other way
 # The folders beeing used here are used during the execution of functions in this repo
 sys.path.insert(0, '../../mcop-simulation-federates/sim_orchestrator/src')
+sys.path.insert(0, '../../mcop-simulation-federates/sim_orchestrator/rti_connections')
 sys.path.insert(0, '../../mcop-simulation-federates/sim_shared/src')
+sys.path.insert(0, '../../mcop-simulation-federates/util')
 sys.path.insert(0, '../../mcop-simulation-models/sim_batt/src')
 sys.path.insert(0, '../../mcop-simulation-models/sim_payload/src')
 sys.path.insert(0, '../../mcop-simulation-models/sim_pcdu/src')

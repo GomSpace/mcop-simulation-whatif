@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1607676502.0,
+    "timestamp": 1608569630.0,
     "simulationId": "simscenarioId_HOOP",
-    "reportedTimestamp": 0.0,
+    "reportedTimestampRel": 0.0,
+    "reportedTimestampAbs": 16025359910.0,
     "assetId": "GOMX-4A",
     "componentId": "SolarArray",
     "simulationModel": "solararr",
     "type": "orbit",
     "name": "setInsolation",
-    "value_str": "True",
+    "valueString": "True",
     "unit": "NA"
   }
 ]

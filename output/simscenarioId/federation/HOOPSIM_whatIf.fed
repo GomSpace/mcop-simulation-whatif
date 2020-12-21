@@ -7,14 +7,14 @@
     (attribute privilegeToDeleteObject reliable timestamp)
     (class RTIprivate)
     (class OBC
-       (attribute batt__setRunning reliable timestamp)
-       (attribute batt__setTimeEventList reliable timestamp)
        (attribute payload__setRunning reliable timestamp)
        (attribute payload__setTimeEventList reliable timestamp)
-       (attribute pcdu__setRunning reliable timestamp)
-       (attribute pcdu__setTimeEventList reliable timestamp)
        (attribute solararr__setRunning reliable timestamp)
        (attribute solararr__setTimeEventList reliable timestamp)
+       (attribute pcdu__setRunning reliable timestamp)
+       (attribute pcdu__setTimeEventList reliable timestamp)
+       (attribute batt__setRunning reliable timestamp)
+       (attribute batt__setTimeEventList reliable timestamp)
        (attribute target_GOMX-4A_PCDU1_setCurrentMode reliable timestamp)
        (attribute target_GOMX-4A_payload1_setCurrentMode reliable timestamp)
        (attribute ABORT reliable timestamp)
@@ -22,10 +22,10 @@
     )  ;; end OBC
     (class ORBIT
        (attribute ABORT reliable timestamp)
-       (attribute batt__setTimeEventList reliable timestamp)
        (attribute payload__setTimeEventList reliable timestamp)
-       (attribute pcdu__setTimeEventList reliable timestamp)
        (attribute solararr__setTimeEventList reliable timestamp)
+       (attribute pcdu__setTimeEventList reliable timestamp)
+       (attribute batt__setTimeEventList reliable timestamp)
        (attribute target_GOMX-4A_SolarArray_setInsolation reliable timestamp)
     )  ;; end ORBIT
     (class pcdu

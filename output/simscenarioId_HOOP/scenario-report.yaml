@@ -7,7 +7,7 @@ summary:
     error: 0
     warning: 0
   timings:
-    real: 41158
+    real: 41627
     simulated: 1008000
 outputFiles:
   - path: //mnt/c/users/maan/projects/mcop-simulation-whatif/output//simscenarioId_HOOP/GOMX-4A/modules.rep
