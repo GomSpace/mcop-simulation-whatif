@@ -28,7 +28,8 @@ db/output/*
 libs/*.jar
 
 # Ignore output
-./output
+output
+./output/sim*
 ./output/*.out
 ./output/*.json
 

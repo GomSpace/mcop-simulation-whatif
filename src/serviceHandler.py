@@ -104,7 +104,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
             #Run the simulation with the defined arguments
             if "runSimulation" in form.keys():
 
-                rs = Thread(target=subprocess.run, args=(['python', 
+                rs = Thread(target=subprocess.run, args=(['python3', 
                                     runOrchestratorPath + 'orchestrator.py',
                                   '--scenarioFile',        scenarioFile,
                                   '--modemModulationFile', modemModulationFile,
