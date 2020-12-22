@@ -7,8 +7,6 @@ import logging
 import logging.config
 import http.server
 import threading
-import subprocess
-import webbrowser
 
 import serviceHandler
 
@@ -81,7 +79,8 @@ def main(args):
             server_handler.assassin = threading.Thread(target=server.shutdown)
             server_handler.assassin.daemon = True
 
-            os.system(f'xdg-open http://{args.httpListenAddress}:{args.httpListenPort}/')
+            #Open browser
+            os.system(f'xdg-open http://{args.httpListenAddress}:{args.httpListenPort}/ &')
 
             #Wait forever for incoming http requests
             server.serve_forever()
@@ -113,16 +112,4 @@ if __name__ == '__main__':
 
     main(args)
 
-
-
-
 # -*- coding: utf-8 -*-
-
-'''
-#Add to PYTHONPATH
-relativePath = [str(utilsFolder), str(orchestratorFolder), str(runSimulationFolder)]
-paths = ":".join(relativePath)
-#Add the relative paths to the PYTHONPATH
-os.environ["PYTHONPATH"] = paths + ":" + ("" if os.environ.get("PYTHONPATH") == None else os.environ.get("PYTHONPATH"))
-'''
-

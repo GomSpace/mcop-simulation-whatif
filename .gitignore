@@ -1,0 +1,34 @@
+# Python
+# We ignore cache files and compiled code
+__pycache__
+*.pyc
+
+# We ignore ide stuff
+.vscode/
+
+# We ignore built documentation
+tool/docs/_build/
+
+# This logic is meant to ignore the content of db/output while
+## keeping track of this directory
+## keeping track of the reference_not_delete subdirectory which is there for reference !
+!db/output
+db/output/*
+!db/output/reference_not_delete/
+!db/output/reference_not_delete/*
+
+# Ignore the product of VT (Validation Test)
+./*/vt/freeze
+./*/vt/testResults
+./*/vt/.pytest_cache
+*.frz
+*.log
+
+# Ignore library
+libs/*.jar
+
+# Ignore output
+./output
+./output/*.out
+./output/*.json
+

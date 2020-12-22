@@ -2,14 +2,9 @@
 
 import subprocess
 import http.server
-from pathlib import Path
 from threading import Thread
 import os
-import webbrowser
 import signal
-
-#Import time
-import time
 
 #This module defines a number of utilities for use by CGI scripts written in Python.
 import cgi
@@ -19,19 +14,17 @@ import simImports
 
 #Import the modules needed in this script
 from orchestratorFile import OrchestratorFile
-from kibanaManager import AWSKibanaHandler
-from orchestrator import Orchestrator
 
 #################################################################################
 # SERVER INTERACTIONS HANDLING
 #################################################################################
 
 
-class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, OrchestratorFile):
-    '''
+class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
+    """
     This class will handle any incoming request from the browser 
     It derives from BaseHTTPRequestHandler
-    '''
+    """
 
 	#Handler for the GET requests
     def do_GET(self):
@@ -173,9 +166,9 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
             return
 
     def getBasePath(self):
-        '''getBasePath
+        """getBasePath
             Get base Path of the repositories in your local device
-        '''
+        """
 
         currentPath = os.getcwd()
         cpList = currentPath.split('/')

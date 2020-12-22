@@ -135,7 +135,7 @@ a:visited{
         The folder should be located in the parent folder where all <i>mcop-simulation</i> repositories are located.
     </p>
     <label>Simulation Scenario Bundle </label> <br>
-    <input type="text" name="scenarioFile" value="mcop-simulation-whatif/output/scenario-bundle-HOOP-compatible.json" size="90"/>
+    <input type="text" name="scenarioFile" value="mcop-simulation-federates/input/simulation-scenario-bundle.json" size="90"/>
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="openScenarioFile"><b>> OPEN SCENARIO FILE </b></button>
     <p></p>
@@ -161,7 +161,7 @@ a:visited{
         Select the file (.csv) where the modulation schemes are defined under the <i>DVB-S2X</i> waveform.
     </p>
     <label>Modem modulation scheme </label> <br>
-    <input type="text" name="modemModulationFile" value="mcop-simulation-whatif/input/modem_scheme.csv" size="90"/>
+    <input type="text" name="modemModulationFile" value="mcop-simulation-federates/input/modem_scheme.csv" size="90"/>
 </div>
 
 
@@ -199,17 +199,17 @@ a:visited{
 ###############################################################################
     STEP 5                                                                  -->
 
-<h4>5 / Visualise Results</h4>
+<h4>5 / Visualize Results</h4>
 
 <div id=steps>
     <p id=infoText>
-        Visualise the simulation results for the chosen scenario on <a href="https://www.elastic.co/kibana" target="_blank">Kibana Elasticsearch</a>.
+        Visualize the simulation results for the chosen scenario on <a href="https://www.elastic.co/kibana" target="_blank">Kibana Elasticsearch</a>.
         <br>
     </p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="kibanaOutput"><b>> KIBANA</b></button>
     <p id=infoText>
         <b><i>(!) </i></b> The Index on Kibana Elasticsearch represents a database.
-        Under one Index you can visualise results from different simulations.
+        Under one Index you can visualize results from different simulations.
         To do so, make sure the <i>simulationId</i> is unique in the scenario bundle.
     </p>
 </div>
@@ -233,7 +233,7 @@ a:visited{
     </p>
 
     <label>HOOP Simulation Scenario Bundle </label> <br>
-    <input type="text" name="HOOPscenarioFile" value="mcop-simulation-whatif/input/scenario-bundle-HOOP.json" size="90"/>
+    <input type="text" name="HOOPscenarioFile" value="mcop-simulation-federates/input/scenario-bundle-HOOP.json" size="90"/>
 
     <p></p>
     <label>Export file name </label> <br>

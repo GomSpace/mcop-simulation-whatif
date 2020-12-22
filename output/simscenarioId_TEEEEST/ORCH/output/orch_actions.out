@@ -1,8 +1,0 @@
-timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
-1607522007,simscenarioId_TEEEEST,400000,GOMX-4A,NanoCam,payload,action,setRunning,True,NA
-1607522007,simscenarioId_TEEEEST,29000000,GOMX-4A,NanoCam,payload,action,setCurrentMode,SLEEP,NA
-1607522007,simscenarioId_TEEEEST,210000000,GOMX-4A,NanoCam,payload,action,setCurrentMode,SNAP,NA
-1607522007,simscenarioId_TEEEEST,210000000,GOMX-4A,NanoCam,payload,action,setData,1.45_id2_rateStart,NA
-1607522007,simscenarioId_TEEEEST,335000000,GOMX-4A,NanoCam,payload,action,setCurrentMode,SLEEP,NA
-1607522007,simscenarioId_TEEEEST,335000000,GOMX-4A,NanoCam,payload,action,setData,-1.45_id2_rateEnd,NA
-1607522007,simscenarioId_TEEEEST,336000000,GOMX-4A,NanoCam,payload,action,setCurrentMode,OFF,NA

@@ -18,6 +18,7 @@ relativePath = [
     str(federatesPath.joinpath('sim_orbit/rti_connections')),
     str(federatesPath.joinpath('sim_orbit/src')),
     str(federatesPath.joinpath('sim_orchestrator/rti_connections')),
+    str(federatesPath.joinpath('sim_orchestrator/AWSKibana')),
     str(federatesPath.joinpath('sim_orchestrator/src')),
     str(federatesPath.joinpath('sim_shared/src')),
     str(federatesPath.joinpath('util')),
@@ -37,9 +38,7 @@ paths = ":".join(relativePath)
 #Establish a python environment needed when executing functions in other repos
 os.environ["PYTHONPATH"] = paths + ":" + ("" if os.environ.get("PYTHONPATH") == None else os.environ.get("PYTHONPATH"))
 
-#As the paths established above are not immediate to take action, there 
-# is need to establish there here in other way
-# The folders beeing used here are used during the execution of functions in this repo
+#Import models
 sys.path.insert(0, '../../mcop-simulation-federates/sim_orchestrator/src')
 sys.path.insert(0, '../../mcop-simulation-federates/sim_orchestrator/rti_connections')
 sys.path.insert(0, '../../mcop-simulation-federates/sim_shared/src')
