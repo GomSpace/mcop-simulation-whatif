@@ -81,7 +81,11 @@ def main(args):
             server_handler.assassin = threading.Thread(target=server.shutdown)
             server_handler.assassin.daemon = True
 
-            os.system(f'xdg-open http://{args.httpListenAddress}:{args.httpListenPort}/')
+            mainURL = f'http://{args.httpListenAddress}:{args.httpListenPort}/WhatIfAnalysesTool/'
+
+            #open default browser
+            os.system(f'xdg-open {mainURL}')
+
 
             #Wait forever for incoming http requests
             server.serve_forever()
@@ -117,12 +121,4 @@ if __name__ == '__main__':
 
 
 # -*- coding: utf-8 -*-
-
-'''
-#Add to PYTHONPATH
-relativePath = [str(utilsFolder), str(orchestratorFolder), str(runSimulationFolder)]
-paths = ":".join(relativePath)
-#Add the relative paths to the PYTHONPATH
-os.environ["PYTHONPATH"] = paths + ":" + ("" if os.environ.get("PYTHONPATH") == None else os.environ.get("PYTHONPATH"))
-'''
 

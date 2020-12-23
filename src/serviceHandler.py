@@ -26,7 +26,7 @@ from orchestrator import Orchestrator
 # SERVER INTERACTIONS HANDLING
 #################################################################################
 
-
+pathlist = []
 class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, OrchestratorFile):
     '''
     This class will handle any incoming request from the browser 
@@ -36,42 +36,33 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
 	#Handler for the GET requests
     def do_GET(self):
 
-        self.path = ("webGateway.html")
-        
-        try:
-            #Check the file extension required and
-    		#set the right mime type
-            sendReply = False
-            if self.path.endswith(".html"):
+        if self.path.endswith("/WhatIfAnalysesTool/"):
+            try:
+                file = ("webGateway.html")
                 mimetype = 'text/html'
-                sendReply = True
-            if self.path.endswith(".jpg"):
-                mimetype = 'image/jpg'
-                sendReply = True
-            if self.path.endswith(".gif"):
-                mimetype = 'image/gif'
-                sendReply = True
-            if self.path.endswith(".js"):
-                mimetype = 'application/javascript'
-                sendReply = True
-            if self.path.endswith(".css"):
-                mimetype = 'text/css'
-                sendReply = True
-            if self.path.endswith(".json"):
-                mimetype = 'application/json'
-                sendReply = True
-
-            if sendReply == True:
                 # Open the static file requested and send it
-                with open(self.path) as f:
+                with open(file) as f:
                     self.send_response(200)
                     self.send_header('Content-type', mimetype)
                     self.end_headers()
                     self.wfile.write(bytes(f.read(), "utf-8"))
                 return
-        except IOError:
-            self.send_error(404,'This File Was Not Found: %s' % self.path)
-            
+            except IOError:
+                self.send_error(404,'This File Was Not Found: %s' % self.path)
+
+        elif self.path.endswith('/WhatIfAnalysesTool/scenarioBundle'):
+
+            mimetype = 'application/json'
+            # Open the static file requested and send it
+            with open(pathlist[-1]) as f:
+                self.send_response(200)
+                self.send_header('Content-type', mimetype)
+                self.end_headers()
+                self.wfile.write(bytes(f.read(), "utf-8"))
+            return
+
+
+
     #Handler for the POST requests
     def do_POST(self):
 
@@ -85,16 +76,16 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
             self.end_headers()
 
             #Get base path
-            basePath = self.getBasePath()
+            baseDirPath = self.getBasePath()
 
             runOrchestratorPath = '../../mcop-simulation-federates/sim_orchestrator/src/'
 
             #UI input
-            scenarioFile                   = basePath + form["scenarioFile"].value
-            modemModulationFile            = basePath + form["modemModulationFile"].value
-            outputFolder                   = basePath + form["outputFolder"].value
+            self.scenarioFile              = baseDirPath + form["scenarioFile"].value
+            modemModulationFile            = baseDirPath + form["modemModulationFile"].value
+            outputFolder                   = baseDirPath + form["outputFolder"].value
             periodicUpdate                 = form["periodicUpdate"].value
-            HOOPscenarioFile               = basePath + form["HOOPscenarioFile"].value
+            HOOPscenarioFile               = baseDirPath + form["HOOPscenarioFile"].value
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
             indexESName                    = form["indexName"].value
 
@@ -104,8 +95,8 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
             restoreFlag         = 'False'
             printOutput         = 'True'
             runningWhatIf       = 'True'
-            indexConfigFile     = basePath + 'mcop-simulation-whatif/input/index_hoopsim.json'
-            simulatorName = "whatIf"
+            indexConfigFile     = baseDirPath + 'mcop-simulation-whatif/input/index_hoopsim.json'
+            simulatorName  = "whatIf"
             federationName = f"HOOPSIM_{simulatorName}"
 
             #Run the simulation with the defined arguments
@@ -113,7 +104,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
 
                 rs = Thread(target=subprocess.run, args=(['python', 
                                     runOrchestratorPath + 'orchestrator.py',
-                                  '--scenarioFile',        scenarioFile,
+                                  '--scenarioFile',        self.scenarioFile,
                                   '--modemModulationFile', modemModulationFile,
                                   '--outputFolder',        outputFolder,
                                   '--periodicUpdate',      periodicUpdate,
@@ -139,17 +130,15 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
             
             #Open simulation-scenario-bundle in a new tab
             elif "openScenarioFile" in form.keys():
-                #get file from base
-                try:
-                    #open in a default desktop program
-                    os.system(f'xdg-open ../../{form["scenarioFile"].value}')
-                except:
-                    try:
-                        #open in the command line
-                        os.system(f'cat ../../{form["scenarioFile"].value}')
-                    except:
-                        #if on windows, open in a default desktop program
-                        os.system(scenarioFile)
+                
+                pathlist.append(self.scenarioFile)
+                openScenarioURL = 'http://127.0.0.1:8080/WhatIfAnalysesTool/scenarioBundle'
+
+                #open with firefox
+                print("We recommend installing Mozilla Firefox for a better user experience.")
+
+                #it will open a raw view of data in a second tab
+                os.system(f'xdg-open {openScenarioURL}')
 
                 
             elif "kibanaOutput" in form.keys():
@@ -159,10 +148,12 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
                 #################################
 
                 #Open kibana
-                openIndex = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/management/kibana/indexPatterns'
-                openDiscover = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
+                openIndexURL = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/management/kibana/indexPatterns'
+                openDiscoverURL = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
 
-                os.system(f'xdg-open {openDiscover}')
+                # open with firefox
+                print("We recommend installing Mozilla Firefox for a better user experience.")
+                os.system(f'xdg-open {openDiscoverURL}')
 
             elif "quit" in form.keys():
                 os.kill(0, signal.SIGTERM)
@@ -185,3 +176,4 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, Orchestrator, Orchestrat
         basePath = basePath + '/'
 
         return basePath
+

@@ -1,4 +1,0 @@
-timestamp,simulationId,reportedTimestamp,assetId,componentId,simulationModel,type,name,value,unit
-1608569630,simscenarioId_HOOP,4000000,GOMX-4A,payload1,payload,action,setRunning,True,NA
-1608569630,simscenarioId_HOOP,8000000,GOMX-4A,NanoCam,payload,action,setRunning,True,NA
-1608569630,simscenarioId_HOOP,1004000000,GOMX-4A,PCDU1,pcdu,action,setCurrentMode,ON,NA
