@@ -107,15 +107,14 @@ a:visited{
 
 <div id='title'>
     <h1>
-        HOOP SIMULATION / WHAT-IF ANALYSIS TOOL
+        HOOP SIMULATION / STANDALONE TOOL
     </h1>
     <!-- <img src="hoopLogo.png" alt="logo" width="5" height=""> -->
 </div>
 
 <form id='myForm'>
 <p>
-    Welcome to the What-If Analyses Tool, an addicional tool of HOOP Simulations. <br>
-    Here, you can interact with the simulation to specify your ideal simulation features.
+    Welcome to the HOOPSIM standalone Tool, an addicional tool of HOOP Simulation Platform. <br>
 </p>
 
 
@@ -131,13 +130,14 @@ a:visited{
 
 <div id=steps>
     <p id=infoText>
-        To get started, choose the simulation scenario bundle you want the simulation to run with. 
-        The folder should be located in the parent folder where all <i>mcop-simulation</i> repositories are located.
+        To get started, choose the simulation scenario bundle to initialize the simulation. 
+        The folder should be located in the root folder where all <i>mcop-simulation</i> repositories are located.
     </p>
     <label>Simulation Scenario Bundle </label> <br>
     <input type="text" name="scenarioFile" value="mcop-simulation-federates/input/simulation-scenario-bundle.json" size="90"/>
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="openScenarioFile"><b>> OPEN SCENARIO FILE </b></button>
+    <button id='button' type="submit" onclick="activateAction(this); return false;" name="openFolder"><b>> OPEN SCENARIO FILE FOLDER</b></button>
     <p></p>
 </div>
 
@@ -210,7 +210,7 @@ a:visited{
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="kibanaOutput"><b>> KIBANA</b></button>
     <p id=infoText>
         <b><i>(!) </i></b> The Index on Kibana Elasticsearch represents a database.
-        Under one Index you can visualize results from different simulations.
+        Under one Index it is possible to visualize results from different simulations.
         To do so, make sure the <i>simulationId</i> is unique in the scenario bundle.
     </p>
 </div>
@@ -241,6 +241,7 @@ a:visited{
     <input type="text" name="HOOPscenarioCompatibleFileName" value="scenario-bundle-HOOP-compatible" size="90"/>
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="exportHoopScenarioFile"><b>> EXPORT</b></button>
+    <button id='button' type="submit" onclick="activateAction(this); return false;" name="openFolderHOOPInput"><b>> OPEN HOOP SCENARIO FOLDER</b></button>
     <p></p>
 
     <hr style="height:1px;border-width:0;background-color:rgb(74, 85, 103)">
@@ -250,7 +251,7 @@ a:visited{
     <h4 id=adv>Kibana Index</h4>
     <p id=infoText>
         The simulation results are dumped in the default Index.
-        If you want to dump the results in a different database, define a new Index name.
+        To dump the results in a different database, define a new Index name.
     </p>
 
     <label>Index name </label> <br>

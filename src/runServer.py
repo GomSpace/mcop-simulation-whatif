@@ -8,6 +8,8 @@ import logging.config
 import http.server
 import threading
 
+#Local imports
+import simImports
 import serviceHandler
 
 APP_NAME = 'mcop-sim-platform-gateway'

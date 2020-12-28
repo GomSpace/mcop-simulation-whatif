@@ -9,18 +9,15 @@ import signal
 #This module defines a number of utilities for use by CGI scripts written in Python.
 import cgi
 
-#Establish Paths to Folders
-import simImports
-
 #Import the modules needed in this script
+from logger           import Logger
 from orchestratorFile import OrchestratorFile
 
 #################################################################################
 # SERVER INTERACTIONS HANDLING
 #################################################################################
 
-
-class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
+class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger):
     """
     This class will handle any incoming request from the browser 
     It derives from BaseHTTPRequestHandler
@@ -32,7 +29,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
     def do_GET(self):
 
         self.path = ("webGateway.html")
-        
+       
         try:
             #Check the file extension required and
     		#set the right mime type
@@ -71,6 +68,9 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
     def do_POST(self):
 
         if self.path=="/send":
+            #Restore ABORT
+            self.ABORT = False
+            
             form = cgi.FieldStorage(fp=self.rfile, 
                                     headers=self.headers,
                                     environ={'REQUEST_METHOD': 'POST',
@@ -78,30 +78,28 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
             
             self.send_response(200)
             self.end_headers()
-
             #Get root Directory path
             rootDirPath = self.getBasePath()
 
             runOrchestratorPath = '../../mcop-simulation-federates/sim_orchestrator/src/'
 
             #UI input
-            scenarioFile                   = rootDirPath + form["scenarioFile"].value
-            self.scenarioFile              = scenarioFile
-            modemModulationFile            = rootDirPath + form["modemModulationFile"].value
-            outputFolder                   = rootDirPath + form["outputFolder"].value
+            scenarioFile                   = os.path.join(rootDirPath,form["scenarioFile"].value)
+            modemModulationFile            = os.path.join(rootDirPath, form["modemModulationFile"].value)
+            outputFolder                   = os.path.join(rootDirPath, form["outputFolder"].value)
             periodicUpdate                 = form["periodicUpdate"].value
-            HOOPscenarioFile               = rootDirPath + form["HOOPscenarioFile"].value
+            HOOPscenarioFile               = os.path.join(rootDirPath, form["HOOPscenarioFile"].value)
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
             indexESName                    = form["indexName"].value
 
             #Script Input
-            simulationClassList = "['pcdu','solararr','batt','payload','storageunit','receiver','transmitter','transceiver']"
+            simulationClassList = "['pcdu','solararr','batt','payload','storageunit','receiver','transmitter','transceiver', 'thermal']"
             elevationAngleStep  = '0.01' #[deg]
             runningWhatIf       = 'True'
-            indexConfigFile     = rootDirPath + 'mcop-simulation-whatif/input/index_hoopsim.json'
-            simulatorName       = "whatIf"
+            indexConfigFile     = os.path.join(rootDirPath, 'mcop-simulation-federates/sim_orchestrator/AWSKibana/indexHOOPSIM.json')
+            simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
-
+            
             #Run the simulation with the defined arguments
             if "runSimulation" in form.keys():
 
@@ -121,29 +119,48 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
                                     ],))
                 rs.start()
 
-
-            #Call EXPORT function to transform scenario-bundle from HOOP in
-            #WhatIf compatible format
-            elif "exportHoopScenarioFile" in form.keys():
-                #Use function from OrchestratorFile
-                self.exportSimulationScenarioBundle(HOOPscenarioFile, outputFolder, HOOPscenarioCompatibleFileName)
-
-            
             #Open simulation-scenario-bundle in a new tab
             elif "openScenarioFile" in form.keys():
                 #get file from base
                 try:
                      # open with firefox
                      print("Recommended installing Mozilla Firefox for a better user experience.")
-                     os.system(f'xdg-open ../../{form["scenarioFile"].value}')
+                     os.system(f'xdg-open {scenarioFile} &')
                 except:
                     try:
                         #open in the command line
-                        os.system(f'cat ../../{form["scenarioFile"].value}')
+                        os.system(f'cat {scenarioFile}')
                     except:
                         #if on windows, open in a default desktop program
                         os.system(scenarioFile)
-               
+            
+            #Open simulation-scenario-bundle folder
+            elif "openFolder" in form.keys():
+                scenarioFileFolder = os.path.split(scenarioFile)
+                #get file from base
+                try:
+                     os.system(f'xdg-open {scenarioFileFolder[0]} &')
+                except:
+                    #Not possible to open
+                    print("Not possible to open {}".format(scenarioFileFolder[0]))
+
+            #Call EXPORT function to transform scenario-bundle from HOOP in
+            #WhatIf compatible format
+            elif "exportHoopScenarioFile" in form.keys():
+                #Use function from OrchestratorFile
+                self.name         = "HOOPSIM-STANDALONE"
+                self.blockOnFatal = True
+                self.exportSimulationScenarioBundle(HOOPscenarioFile, outputFolder, HOOPscenarioCompatibleFileName)
+             
+            #Open HOOP simulation-scenario-bundle folder
+            elif "openFolderHOOPInput" in form.keys():
+                scenarioFileFolder = os.path.split(HOOPscenarioFile)
+                #get file from base
+                try:
+                     os.system(f'xdg-open {scenarioFileFolder[0]} &')
+                except:
+                    #Not possible to open
+                    print("Not possible to open {}".format(scenarioFileFolder[0]))
                 
             elif "kibanaOutput" in form.keys():
 
@@ -156,7 +173,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
                 openDiscoverURL = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
                 # open with firefox
                 print("Recommended installing Mozilla Firefox for a better user experience.")
-                os.system(f'xdg-open {openDiscoverURL}')
+                os.system(f'xdg-open {openDiscoverURL} &')
 
             elif "quit" in form.keys():
                 os.kill(0, signal.SIGTERM)
