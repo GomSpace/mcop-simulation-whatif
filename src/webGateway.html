@@ -1,7 +1,7 @@
 <html>
 <header>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HOOPSIM-whatif</title>
+<title>HOOPSIM-ANALYSIS-TOOL</title>
 <style>
 body {
     background-color: rgb(46, 55, 72);
@@ -150,10 +150,11 @@ a:visited{
 
 <div id=steps>
     <p id=infoText>
-        Define the periodic update to be applied to all simulation variables.
+        Define the periodic update to be applied to all simulation variables. Set 0 to not
+        have periodic update
     </p>
     <label>Periodic model update [sec] </label> <br>
-    <input type="text" name="periodicUpdate" value="600" size="10"/><br>
+    <input type="number" name="periodicUpdate" min="0" step="1" value="600"/><br>
 
     <p></p>
     <hr style="height:0.5px;border-width:0;background-color:rgb(74, 85, 103)">

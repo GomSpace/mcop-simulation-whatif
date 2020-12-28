@@ -26,6 +26,8 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
     It derives from BaseHTTPRequestHandler
     """
 
+    pathList : list = []
+
 	#Handler for the GET requests
     def do_GET(self):
 
@@ -77,29 +79,28 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
             self.send_response(200)
             self.end_headers()
 
-            #Get base path
-            basePath = self.getBasePath()
+            #Get root Directory path
+            rootDirPath = self.getBasePath()
 
             runOrchestratorPath = '../../mcop-simulation-federates/sim_orchestrator/src/'
 
             #UI input
-            scenarioFile                   = basePath + form["scenarioFile"].value
-            modemModulationFile            = basePath + form["modemModulationFile"].value
-            outputFolder                   = basePath + form["outputFolder"].value
+            scenarioFile                   = rootDirPath + form["scenarioFile"].value
+            self.scenarioFile              = scenarioFile
+            modemModulationFile            = rootDirPath + form["modemModulationFile"].value
+            outputFolder                   = rootDirPath + form["outputFolder"].value
             periodicUpdate                 = form["periodicUpdate"].value
-            HOOPscenarioFile               = basePath + form["HOOPscenarioFile"].value
+            HOOPscenarioFile               = rootDirPath + form["HOOPscenarioFile"].value
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
             indexESName                    = form["indexName"].value
 
             #Script Input
             simulationClassList = "['pcdu','solararr','batt','payload','storageunit','receiver','transmitter','transceiver']"
             elevationAngleStep  = '0.01' #[deg]
-            restoreFlag         = 'False'
-            printOutput         = 'True'
             runningWhatIf       = 'True'
-            indexConfigFile     = basePath + 'mcop-simulation-whatif/input/index_hoopsim.json'
-            simulatorName = "whatIf"
-            federationName = f"HOOPSIM_{simulatorName}"
+            indexConfigFile     = rootDirPath + 'mcop-simulation-whatif/input/index_hoopsim.json'
+            simulatorName       = "whatIf"
+            federationName      = f"HOOPSIM_{simulatorName}"
 
             #Run the simulation with the defined arguments
             if "runSimulation" in form.keys():
@@ -117,8 +118,6 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
                                   '--runningWhatIf',       runningWhatIf,
                                   '--indexESName',         indexESName,
                                   '--indexConfigFile',     indexConfigFile,
-                                # '--restoreFlag',         restoreFlag,
-                                # '--printOutput',         printOutput
                                     ],))
                 rs.start()
 
@@ -134,8 +133,9 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
             elif "openScenarioFile" in form.keys():
                 #get file from base
                 try:
-                    #open in a default desktop program
-                    os.system(f'xdg-open ../../{form["scenarioFile"].value}')
+                     # open with firefox
+                     print("Recommended installing Mozilla Firefox for a better user experience.")
+                     os.system(f'xdg-open ../../{form["scenarioFile"].value}')
                 except:
                     try:
                         #open in the command line
@@ -143,7 +143,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
                     except:
                         #if on windows, open in a default desktop program
                         os.system(scenarioFile)
-
+               
                 
             elif "kibanaOutput" in form.keys():
 
@@ -152,10 +152,11 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
                 #################################
 
                 #Open kibana
-                openIndex = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/management/kibana/indexPatterns'
-                openDiscover = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
-
-                os.system(f'xdg-open {openDiscover}')
+                openIndexURL    = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/management/kibana/indexPatterns'
+                openDiscoverURL = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
+                # open with firefox
+                print("Recommended installing Mozilla Firefox for a better user experience.")
+                os.system(f'xdg-open {openDiscoverURL}')
 
             elif "quit" in form.keys():
                 os.kill(0, signal.SIGTERM)
@@ -169,7 +170,6 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile):
         """getBasePath
             Get base Path of the repositories in your local device
         """
-
         currentPath = os.getcwd()
         cpList = currentPath.split('/')
         cpList.pop(-1)
