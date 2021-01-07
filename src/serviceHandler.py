@@ -9,6 +9,9 @@ import signal
 #This module defines a number of utilities for use by CGI scripts written in Python.
 import cgi
 
+#Import project folders
+import simImports
+
 #Import the modules needed in this script
 from logger           import Logger
 from orchestratorFile import OrchestratorFile
