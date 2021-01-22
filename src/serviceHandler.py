@@ -96,7 +96,6 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             indexESName                    = form["indexName"].value
 
             #Script Input
-            simulationClassList = "['pcdu','solararr','batt','payload','storageunit','receiver','transmitter','transceiver', 'thermal']"
             elevationAngleStep  = '0.01' #[deg]
             runningWhatIf       = 'True'
             indexConfigFile     = os.path.join(rootDirPath, 'mcop-simulation-federates/sim_orchestrator/AWSKibana/indexHOOPSIM.json')
@@ -105,7 +104,13 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             
             #Run the simulation with the defined arguments
             if "runSimulation" in form.keys():
-
+                
+                #Get check button if run thermal model or not
+                try:
+                    runningThermal  = True if form["thermal"].value == 'on' else False
+                except:
+                    runningThermal  = False
+                
                 rs = Thread(target=subprocess.run, args=(['python3', 
                                     runOrchestratorPath + 'orchestrator.py',
                                   '--scenarioFile',        scenarioFile,
@@ -115,8 +120,8 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                                   '--elevationAngleStep',  elevationAngleStep,
                                   '--fedName',             federationName,
                                   '--name',                simulatorName,
-                                  '--simulationClassList', simulationClassList,
                                   '--runningWhatIf',       runningWhatIf,
+                                  '--runningThermal',      str(runningThermal),
                                   '--indexESName',         indexESName,
                                   '--indexConfigFile',     indexConfigFile,
                                     ],))
@@ -171,10 +176,10 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                 #Open KIBANA Elasticsearch output
                 #################################
 
-                #Open kibana
+                #Open KIBANA
                 openIndexURL    = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/management/kibana/indexPatterns'
                 openDiscoverURL = 'https://search-hoopsim-xebvo4edd36kgunyxhaxct2tqi.eu-central-1.es.amazonaws.com/_plugin/kibana/app/discover#/'
-                # open with firefox
+                # open with Firefox
                 print("Recommended installing Mozilla Firefox for a better user experience.")
                 os.system(f'xdg-open {openDiscoverURL} &')
 
