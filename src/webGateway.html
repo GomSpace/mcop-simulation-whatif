@@ -1,7 +1,7 @@
 <html>
 <header>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HOOPSIM-ANALYSIS-TOOL</title>
+<title>HOOPSIM-STANDALONE-TOOL</title>
 <style>
 body {
     background-color: rgb(46, 55, 72);
@@ -154,8 +154,7 @@ a:visited{
         have periodic update
     </p>
     <label>Periodic model update [sec] </label> <br>
-    <input type="number" name="periodicUpdate" min="0" step="1" value="600"/><br>
-
+    <input type="number" name="periodicUpdate" pattern="[0-9]+" min="0" step="1" value="600" onkeypress="return onlyNumberKey(event)"/><br>
     <p></p>
     <hr style="height:0.5px;border-width:0;background-color:rgb(74, 85, 103)">
     <p id=infoText>
@@ -192,9 +191,16 @@ a:visited{
     <p id=infoText>
         Run simulation and send the results to Kibana Elasticsearch.
     </p>
-    <button id='button' type="submit" onclick="activateAction(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
+    <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
     <input type="checkbox" id="thermal" name="thermal"/>
     <label for="thermal">Thermal Calculation</label><br>
+    <input type="checkbox" id="monteCarlo" name="monteCarlo"/>
+    <label for="monteCarlo">MonteCarlo Runs</label><br>
+    <input type="number" name="monteCarloRuns" pattern="[0-9]+" min="0" step="1" value="1000" onkeypress="return onlyNumberKey(event)"/><br>
+    <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
+    <button id='button' type="submit" onclick="activateAction(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
+    
+    
 </div>
 
 
@@ -326,6 +332,17 @@ function activateAction(element){
 }
 
 </script>
+
+<script> 
+    function onlyNumberKey(evt) { 
+          
+        // Only ASCII charactar in that range allowed 
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+            return false; 
+        return true; 
+    } 
+</script> 
 
 </form>
 </body>

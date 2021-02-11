@@ -10,7 +10,7 @@ import signal
 import cgi
 
 #Import project folders
-import simImports
+import importSimProject
 
 #Import the modules needed in this script
 from logger           import Logger
@@ -97,10 +97,11 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
 
             #Script Input
             elevationAngleStep  = '0.01' #[deg]
-            runningWhatIf       = 'True'
+            awsOutput           = 'True'
             indexConfigFile     = os.path.join(rootDirPath, 'mcop-simulation-federates/sim_orchestrator/AWSKibana/indexHOOPSIM.json')
             simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
+            NmonteCarloRun      = 0
             
             #Run the simulation with the defined arguments
             if "runSimulation" in form.keys():
@@ -110,21 +111,31 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                     runningThermal  = True if form["thermal"].value == 'on' else False
                 except:
                     runningThermal  = False
+                    
+                #Get check button if run in MonteCarlo multiple runs
+                try:
+                    runningMonteCarlo  = True if form["monteCarlo"].value == 'on' else False
+                    NmonteCarloRun     = form["monteCarloRuns"].value
+                except:
+                    runningMonteCarlo  = False
+                
                 
                 rs = Thread(target=subprocess.run, args=(['python3', 
                                     runOrchestratorPath + 'orchestrator.py',
-                                  '--scenarioFile',        scenarioFile,
-                                  '--modemModulationFile', modemModulationFile,
-                                  '--outputFolder',        outputFolder,
-                                  '--periodicUpdate',      periodicUpdate,
-                                  '--elevationAngleStep',  elevationAngleStep,
-                                  '--fedName',             federationName,
-                                  '--name',                simulatorName,
-                                  '--runningWhatIf',       runningWhatIf,
-                                  '--runningThermal',      str(runningThermal),
-                                  '--indexESName',         indexESName,
-                                  '--indexConfigFile',     indexConfigFile,
-                                    ],))
+                                    '--scenarioFile',        scenarioFile,
+                                    '--modemModulationFile', modemModulationFile,
+                                    '--outputFolder',        outputFolder,
+                                    '--periodicUpdate',      periodicUpdate,
+                                    '--elevationAngleStep',  elevationAngleStep,
+                                    '--fedName',             federationName,
+                                    '--name',                simulatorName,
+                                    '--awsOutput',           awsOutput,
+                                    '--runningThermal',      str(runningThermal),
+                                    '--runningMonteCarlo',   str(runningMonteCarlo),
+                                    '--NmonteCarloRun',      str(NmonteCarloRun),
+                                    '--indexESName',         indexESName,
+                                    '--indexConfigFile',     indexConfigFile,
+                                        ],))
                 rs.start()
 
             #Open simulation-scenario-bundle in a new tab
