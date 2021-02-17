@@ -93,12 +93,10 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             periodicUpdate                 = form["periodicUpdate"].value
             HOOPscenarioFile               = os.path.join(rootDirPath, form["HOOPscenarioFile"].value)
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
-            indexESName                    = form["indexName"].value
-
+            
             #Script Input
             elevationAngleStep  = '0.01' #[deg]
             awsOutput           = 'True'
-            indexConfigFile     = os.path.join(rootDirPath, 'mcop-simulation-federates/sim_orchestrator/AWSKibana/indexHOOPSIM.json')
             simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
             NmonteCarloRun      = 0
@@ -133,8 +131,6 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                                     '--runningThermal',      str(runningThermal),
                                     '--runningMonteCarlo',   str(runningMonteCarlo),
                                     '--NmonteCarloRun',      str(NmonteCarloRun),
-                                    '--indexESName',         indexESName,
-                                    '--indexConfigFile',     indexConfigFile,
                                         ],))
                 rs.start()
 
