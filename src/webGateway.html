@@ -157,22 +157,28 @@ textarea {
 ###############################################################################
     STEP 2                                                                  -->
 
-<h4>2 / Select Simulation Parameters</h4>
+<h4>2 / Define Simulation Parameters</h4>
 
 <div id=steps>
     <p id=infoText>
         Define the periodic update to be applied to all simulation variables. Set 0 to not
-        have periodic update
+        have periodic update.
     </p>
     <label>Periodic model update [sec] </label> <br>
     <input type="number" name="periodicUpdate" pattern="[0-9]+" min="0" step="1" value="600" onkeypress="return onlyNumberKey(event)"/><br>
     <p></p>
     <hr style="height:0.5px;border-width:0;background-color:rgb(74, 85, 103)">
     <p id=infoText>
+        Select the file (.csv) where listed interpoaltion parameters for the battery model SOC(OCV) and OCV(SOC) curves.
+     </p>
+    <label>Battery SOC(OCV) - OCV(SOC) interpolation file </label> <br>
+    <input type="text" name="SOC_OCVbattFile" value="mcop-simulation-federates/input/batt_SOCOCV_scheme.csv" size="90"/><br>
+    <p></p>
+    <p id=infoText>
         Select the file (.csv) where the modulation schemes are defined under the <i>DVB-S2X</i> waveform.
     </p>
     <label>Modem modulation scheme </label> <br>
-    <input type="text" name="modemModulationFile" value="mcop-simulation-federates/input/modem_scheme.csv" size="90"/>
+    <input type="text" name="modemModulationFile" value="mcop-simulation-federates/input/modem_scheme.csv" size="90"/><br>
 </div>
 
 
@@ -188,7 +194,7 @@ textarea {
         Choose the output folder from the parent folder where the repositories are located.
     </p>
     <label>Output folder </label> <br>
-    <input type="text" name="outputFolder" value="mcop-simulation-standalone/output/" size="90"/>
+    <input type="text" name="outputPath" value="mcop-simulation-standalone/output/" size="90"/>
 </div>
 
 
@@ -209,6 +215,7 @@ textarea {
     <label for="monteCarlo">MonteCarlo Runs</label><br>
     <input type="number" name="monteCarloRuns" pattern="[0-9]+" min="0" step="1" value="1000" onkeypress="return onlyNumberKey(event)"/><br>
     <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
+    <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
     
     
@@ -223,7 +230,7 @@ textarea {
 
 <div id=steps>
     <p id=infoText>
-        Visualize last simulation run results report
+        Visualize last simulation run results report.
     </p>
     <textarea readonly id=textarea name="simulation-report">
       Please run the first simulation to visualize its report.
