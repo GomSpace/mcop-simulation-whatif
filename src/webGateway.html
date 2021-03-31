@@ -213,7 +213,7 @@ textarea {
     <label for="thermal">Thermal Calculation</label><br>
     <input type="checkbox" id="monteCarlo" name="monteCarlo"/>
     <label for="monteCarlo">MonteCarlo Runs</label><br>
-    <input type="number" name="monteCarloRuns" pattern="[0-9]+" min="0" step="1" value="1000" onkeypress="return onlyNumberKey(event)"/><br>
+    <input type="number" name="monteCarloRuns" pattern="[0-9]+" min="0" step="1" value="0" onkeypress="return onlyNumberKey(event)"/><br>
     <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
