@@ -1,8 +1,6 @@
 #! /usr/bin/env python3
 
-import subprocess
 import http.server
-from threading import Thread
 import os
 import signal
 
@@ -89,16 +87,15 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             #UI input
             scenarioFile                   = os.path.join(rootDirPath,form["scenarioFile"].value)
             modemModulationFile            = os.path.join(rootDirPath, form["modemModulationFile"].value)
-            outputFolder                   = os.path.join(rootDirPath, form["outputFolder"].value)
+            SOC_OCVbattFile                = os.path.join(rootDirPath, form["SOC_OCVbattFile"].value)
+            outputPath                   = os.path.join(rootDirPath, form["outputPath"].value)
             periodicUpdate                 = form["periodicUpdate"].value
             HOOPscenarioFile               = os.path.join(rootDirPath, form["HOOPscenarioFile"].value)
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
-            indexESName                    = form["indexName"].value
-
+            
             #Script Input
             elevationAngleStep  = '0.01' #[deg]
             awsOutput           = 'True'
-            indexConfigFile     = os.path.join(rootDirPath, 'mcop-simulation-federates/sim_orchestrator/AWSKibana/indexHOOPSIM.json')
             simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
             NmonteCarloRun      = 0
@@ -119,24 +116,23 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                 except:
                     runningMonteCarlo  = False
                 
-                
-                rs = Thread(target=subprocess.run, args=(['python3', 
-                                    runOrchestratorPath + 'orchestrator.py',
-                                    '--scenarioFile',        scenarioFile,
-                                    '--modemModulationFile', modemModulationFile,
-                                    '--outputFolder',        outputFolder,
-                                    '--periodicUpdate',      periodicUpdate,
-                                    '--elevationAngleStep',  elevationAngleStep,
-                                    '--fedName',             federationName,
-                                    '--name',                simulatorName,
-                                    '--awsOutput',           awsOutput,
-                                    '--runningThermal',      str(runningThermal),
-                                    '--runningMonteCarlo',   str(runningMonteCarlo),
-                                    '--NmonteCarloRun',      str(NmonteCarloRun),
-                                    '--indexESName',         indexESName,
-                                    '--indexConfigFile',     indexConfigFile,
-                                        ],))
-                rs.start()
+                orchestratorArguments = ['python3', 
+                                         os.path.join(runOrchestratorPath, 'orchestrator.py'),
+                                         '--scenarioFile',        scenarioFile,
+                                         '--modemModulationFile', modemModulationFile,
+                                         '--battOCVSOCFile',      SOC_OCVbattFile,
+                                         '--outputPath',          self.outputPath if outputPath == "" else outputPath,
+                                         '--periodicUpdate',      periodicUpdate,
+                                         '--elevationAngleStep',  elevationAngleStep,
+                                         '--fedName',             federationName,
+                                         '--name',                simulatorName,
+                                         '--awsOutput',           awsOutput,
+                                         '--runningThermal',      str(runningThermal),
+                                         '--runningMonteCarlo',   str(runningMonteCarlo),
+                                         '--NmonteCarloRun',      str(NmonteCarloRun),
+                                         ]
+                os.system(' '.join(orchestratorArguments))
+            
 
             #Open simulation-scenario-bundle in a new tab
             elif "openScenarioFile" in form.keys():
@@ -169,7 +165,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                 #Use function from OrchestratorFile
                 self.name         = "HOOPSIM-STANDALONE"
                 self.blockOnFatal = True
-                self.exportSimulationScenarioBundle(HOOPscenarioFile, outputFolder, HOOPscenarioCompatibleFileName)
+                self.exportSimulationScenarioBundle(HOOPscenarioFile, outputPath, HOOPscenarioCompatibleFileName)
              
             #Open HOOP simulation-scenario-bundle folder
             elif "openFolderHOOPInput" in form.keys():
