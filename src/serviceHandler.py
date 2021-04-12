@@ -93,9 +93,11 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             HOOPscenarioFile               = os.path.join(rootDirPath, form["HOOPscenarioFile"].value)
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
             
-            #Script Input
+            #Default ORCHESTRATOR arguments
             elevationAngleStep  = '0.01' #[deg]
             awsOutput           = 'True'
+            runningDeployment   = 'False'
+            runningTest         = 'False'
             simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
             NmonteCarloRun      = 0
@@ -129,6 +131,8 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                                          '--awsOutput',           awsOutput,
                                          '--runningThermal',      str(runningThermal),
                                          '--runningMonteCarlo',   str(runningMonteCarlo),
+                                         '--runningDeployment',   runningDeployment,
+                                         '--runningTest',         runningTest,
                                          '--NmonteCarloRun',      str(NmonteCarloRun),
                                          ]
                 os.system(' '.join(orchestratorArguments))
