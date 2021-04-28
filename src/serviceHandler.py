@@ -29,7 +29,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
 	#Handler for the GET requests
     def do_GET(self):
 
-        self.path = ("webGateway.html")
+        self.path = ("HOOPSIMgui.html")
        
         try:
             #Check the file extension required and

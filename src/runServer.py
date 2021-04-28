@@ -11,7 +11,7 @@ import threading
 #Local imports
 import serviceHandler
 
-APP_NAME = 'mcop-sim-platform-gateway'
+APP_NAME = 'mcop-simulation-standalone'
 APP_VERSION = '0.1'
 PORT_NUMBER = 8080
 MY_FOLDER = os.path.dirname(os.path.realpath(__file__))
