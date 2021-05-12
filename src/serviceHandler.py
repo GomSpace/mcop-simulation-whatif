@@ -4,6 +4,9 @@ import http.server
 import os
 import signal
 
+#Import glob
+from glob import glob
+
 #This module defines a number of utilities for use by CGI scripts written in Python.
 import cgi
 
@@ -13,6 +16,13 @@ import importSimProject
 #Import the modules needed in this script
 from logger           import Logger
 from orchestratorFile import OrchestratorFile
+
+
+#################################
+#TODO add visualization of last simulation-report
+#TODO add expandable section for part with periodicupdate, modemfile, etc
+#TODO proper kill when click on close tab
+#TODO set files from borwser
 
 #################################################################################
 # SERVER INTERACTIONS HANDLING
@@ -29,7 +39,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
 	#Handler for the GET requests
     def do_GET(self):
 
-        self.path = ("HOOPSIMgui.html")
+        self.path = ("HOOPSIMui.html")
        
         try:
             #Check the file extension required and
@@ -85,10 +95,10 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             runOrchestratorPath = '../../mcop-simulation-federates/sim_orchestrator/src/'
 
             #UI input
-            scenarioFile                   = os.path.join(rootDirPath,form["scenarioFile"].value)
+            scenarioFile                   = os.path.join(rootDirPath, form["scenarioFile"].value)
             modemModulationFile            = os.path.join(rootDirPath, form["modemModulationFile"].value)
             SOC_OCVbattFile                = os.path.join(rootDirPath, form["SOC_OCVbattFile"].value)
-            outputPath                   = os.path.join(rootDirPath, form["outputPath"].value)
+            outputPath                     = os.path.join(rootDirPath, form["outputPath"].value)
             periodicUpdate                 = form["periodicUpdate"].value
             HOOPscenarioFile               = os.path.join(rootDirPath, form["HOOPscenarioFile"].value)
             HOOPscenarioCompatibleFileName = form["HOOPscenarioCompatibleFileName"].value
@@ -96,7 +106,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
             #Default ORCHESTRATOR arguments
             elevationAngleStep  = '0.01' #[deg]
             awsOutput           = 'True'
-            runningDeployment   = 'False'
+            runningDeployment   = 'True'
             runningTest         = 'False'
             simulatorName       = "standalone"
             federationName      = f"HOOPSIM_{simulatorName}"
@@ -136,7 +146,21 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                                          '--NmonteCarloRun',      str(NmonteCarloRun),
                                          ]
                 os.system(' '.join(orchestratorArguments))
-            
+                
+                #TODO when visualize 
+#                reportFileList = []
+#                for directory,_,_ in os.walk(outputPath):
+#                    reportFileList.extend(glob(os.path.join(directory, '*report.yaml')))
+#                if runningMonteCarlo:
+#                    for filePath in reportFileList:
+#                        if 'MonteCarloResults' in filePath:
+#                            reportFile = filePath
+#                else:
+#                    reportFile = reportFileList[0]
+#                with open(reportFile, 'r') as report:
+#                    fileContent = report.read()
+#                    form["simulation-report"].value = fileContent
+                    
 
             #Open simulation-scenario-bundle in a new tab
             elif "openScenarioFile" in form.keys():
@@ -162,17 +186,26 @@ class ServerHandler(http.server.BaseHTTPRequestHandler, OrchestratorFile, Logger
                 except:
                     #Not possible to open
                     print("Not possible to open {}".format(scenarioFileFolder[0]))
+            
+            #Open output folder
+            elif "openOutputFolder" in form.keys():
+                #get file from base
+                try:
+                     os.system(f'xdg-open {outputPath} &')
+                except:
+                    #Not possible to open
+                    print("Not possible to open {}".format(outputPath))
 
-            #Call EXPORT function to transform scenario-bundle from HOOP in
+            #Call Convert function to transform scenario-bundle from HOOP in
             #WhatIf compatible format
-            elif "exportHoopScenarioFile" in form.keys():
+            elif "convertToRelativeTime" in form.keys():
                 #Use function from OrchestratorFile
                 self.name         = "HOOPSIM-STANDALONE"
                 self.blockOnFatal = True
                 self.exportSimulationScenarioBundle(HOOPscenarioFile, outputPath, HOOPscenarioCompatibleFileName)
              
             #Open HOOP simulation-scenario-bundle folder
-            elif "openFolderHOOPInput" in form.keys():
+            elif "openSourceFolder" in form.keys():
                 scenarioFileFolder = os.path.split(HOOPscenarioFile)
                 #get file from base
                 try:

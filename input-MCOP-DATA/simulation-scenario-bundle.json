@@ -1,0 +1,2135 @@
+{
+  "simulation": {
+    "id": "test-MCOP-DATA"
+  },
+  "assets": [
+    {
+      "id": "GOMX-4A",
+      "name": "GOMX-4A",
+      "archetype": "satellite",
+      "parameters": {
+        "noradId": 43197,
+        "ephemerisData": {
+          "type": "TLE",
+          "line1": "1 43197U 18015F   21055.78124001  .00001834  00000-0  75977-4 0  9990",
+          "line2": "2 43197  97.4647 189.1805 0017067 300.2585 165.8124 15.25094936170367"
+        },
+        "mass": 8.0674,
+        "geometry": {
+          "shape": "parallelepiped",
+          "dimX": 0.226,
+          "dimY": 0.1,
+          "dimZ": 0.34
+        },
+        "initialAttitude": {
+          "q0": -1,
+          "q1": 0,
+          "q2": 0,
+          "q3": 0
+        },
+        "thermalProperties": {
+          "alpha": 0.85,
+          "epsilon": 0.8,
+          "thermalModel": "2node",
+          "thermalCapacity": 8992.6,
+          "conductiveCoeff": 10,
+          "radiativeCoeff": 1e-8
+        }
+      },
+      "components": [
+        {
+          "id": "batpx0",
+          "name": "batpx0-name",
+          "description": "Battery Pack system",
+          "metadata": {
+            "simModel": "batt"
+          },
+          "parameters": [
+            {
+              "id": "storageCapacity",
+              "name": "Total Storage Capacity",
+              "description": "Battery Pack total storage capacity, in [J]",
+              "metadata": {
+                "simId": "energyCapacity"
+              },
+              "value": 277200
+            },
+            {
+              "id": "maxVoltage",
+              "name": "Battery max Voltage",
+              "metadata": {
+                "simId": "maxVoltage"
+              },
+              "description": "Battery Pack max registered Voltage value, in [V]",
+              "value": 16.278
+            },
+            {
+              "id": "voltage",
+              "name": "Voltage",
+              "description": "Battery Pack initial Voltage, in [V]",
+              "metadata": {
+                "simId": "voltage"
+              },
+              "value": 16.078,
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 286
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "214-373"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 66837
+            },
+            {
+              "id": "battType",
+              "name": "Battery Type",
+              "description": "Battery Pack Type",
+              "metadata": {
+                "simId": "battType"
+              },
+              "value": "Li-ion_14.4V(4S)"
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-Z"
+            }
+          ]
+        },
+        {
+          "id": "solarArrayYp",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.048288
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "solarArrayYm",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.006036
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": -0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "solarArrayXp",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.018108
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": -0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "solarArrayXm",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.006036
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0.7071068
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "solarArrayZm",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.006036
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": 1
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "solarArrayZp",
+          "description": "Solar Array system",
+          "name": "solarArray0-name",
+          "metadata": {
+            "simModel": "solararr"
+          },
+          "parameters": [
+            {
+              "id": "surface",
+              "name": "Solar Panel Surfece",
+              "description": "Solar Array total surface, in [m2]",
+              "metadata": {
+                "simId": "surface"
+              },
+              "value": 0.006036
+            },
+            {
+              "id": "efficiency",
+              "name": "Solar Array Efficiency",
+              "description": "Solar Array Efficiency, in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.2574
+            },
+            {
+              "id": "packFactor",
+              "name": "Packing Factor",
+              "description": "Solar Array Pack factor, cell surface over total surface, [%]",
+              "metadata": {
+                "simId": "packFactor"
+              },
+              "value": 1
+            },
+            {
+              "id": "position",
+              "name": "Solar Array Position",
+              "description": "Solar Array Mounting Position, wall or deployed",
+              "metadata": {
+                "simId": "mountingPosition"
+              },
+              "value": "wall"
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 1
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0
+            },
+            {
+              "id": "orientation",
+              "name": "Solar Array orientation",
+              "description": "Solar Array Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "p60",
+          "name": "PCDU Name",
+          "description": "Power Control Distribution Unit pcdu10",
+          "metadata": {
+            "simModel": "pcdu"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "1",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 282
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-356"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 50231
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "+Z"
+            }
+          ]
+        },
+        {
+          "id": "OBC-ADCS",
+          "name": "OBC-ADCS",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "adcs"
+          },
+          "parameters": [
+            {
+              "id": "initialAttitude",
+              "name": "ADCS initialAttitude",
+              "description": "ADCS initialAttitude, wrt satellite axes",
+              "metadata": {
+                "simId": "initialAttitude-q0"
+              },
+              "value": 1
+            },
+            {
+              "id": "initialAttitude",
+              "name": "ADCS initialAttitude",
+              "description": "ADCS initialAttitude, wrt satellite axes",
+              "metadata": {
+                "simId": "initialAttitude-q1"
+              },
+              "value": 0
+            },
+            {
+              "id": "initialAttitude",
+              "name": "ADCS initialAttitude",
+              "description": "ADCS initialAttitude, wrt satellite axes",
+              "metadata": {
+                "simId": "initialAttitude-q2"
+              },
+              "value": 0
+            },
+            {
+              "id": "initialAttitude",
+              "name": "ADCS initialAttitude",
+              "description": "ADCS initialAttitude, wrt satellite axes",
+              "metadata": {
+                "simId": "initialAttitude-q3"
+              },
+              "value": 0
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            },
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 0.9
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-X"
+            }
+          ]
+        },
+        {
+          "id": "magnetoSense",
+          "name": "Component Name",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "equipment"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 0.01
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-Y"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            }
+          ]
+        },
+        {
+          "id": "rxAx100",
+          "name": "Component Name",
+          "description": "Some receiver description",
+          "metadata": {
+            "simModel": "receiver"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "1",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-X"
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-1"
+              },
+              "value": 0.3
+            },
+            {
+              "id": "powerConsumptionMode-RECEPTION",
+              "name": "Power Consumption RECEPTION",
+              "description": "Power consumption level for mode RECEPTION, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-2"
+              },
+              "value": 3.37
+            },
+            {
+              "id": "modulationScheme-receiver",
+              "name": "Modulation Scheme in reception mode",
+              "metadata": {
+                "simId": "modulationScheme-receiver"
+              },
+              "description": "Modulation scheme used in the reception mode",
+              "value": "64APSK 32/45 Normal"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            },
+            {
+              "id": "bitErrorRate",
+              "name": "BitErroRate",
+              "description": "BitErroRate",
+              "metadata": {
+                "simId": "bitErrorRate-receiver"
+              },
+              "value": 0.00001
+            }
+          ]
+        },
+        {
+          "id": "NovaTelGNSS",
+          "name": "Component Name",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "equipment"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 1.5
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-Z"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            }
+          ]
+        },
+        {
+          "id": "Fss",
+          "name": "Component Name",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "equipment"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 0.05
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "+Y"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            }
+          ]
+        },
+        {
+          "id": "Magnetor-gsw600",
+          "name": "Component Name",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "equipment"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 0.35
+            },
+            {
+              "id": "powerConsumptionMode-TORQUE",
+              "name": "Power Consumption POW1",
+              "description": "Power consumption level for mode TORQUE, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-TORQUE"
+              },
+              "value": 2.09
+            },
+            {
+              "id": "powerConsumptionMode-MAGNTORQUE",
+              "name": "Power Consumption POW1",
+              "description": "Power consumption level for mode MAGNTORQUE, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-MAGNTORQUE"
+              },
+              "value": 0.61
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "-Z"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            }
+          ]
+        },
+        {
+          "id": "ssdMemory",
+          "name": "Memory",
+          "description": "Mass Memory",
+          "metadata": {
+            "simModel": "storageunit"
+          },
+          "parameters": [
+            {
+              "id": "storageCapacity",
+              "name": "Total Memory Capacity",
+              "metadata": {
+                "simId": "memoryStorageCapacity"
+              },
+              "description": "Mass memory capacity, in [Mbit]",
+              "value": 128
+            },
+            {
+              "id": "StateOfData",
+              "name": "State of Data",
+              "metadata": {
+                "simId": "stateOfData"
+              },
+              "description": "Memory initial State of Data, in [Mbit]",
+              "value": 4,
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "rxData",
+              "name": "Total Rx Data",
+              "metadata": {
+                "simId": "totalRxData"
+              },
+              "description": "Total number of received bytes, in [bytes]",
+              "value": 143908,
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "txData",
+              "name": "Total Tx Data",
+              "metadata": {
+                "simId": "totalTxData"
+              },
+              "description": "Total number of transmitted bytes, in [bytes]",
+              "value": 23499,
+              "reportedTimestamp": 1613867340000
+            }
+          ]
+        },
+        {
+          "id": "nanoPowerP60unit",
+          "name": "Component Name",
+          "description": "Some payload description",
+          "metadata": {
+            "simModel": "equipment"
+          },
+          "parameters": [
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "metadata": {
+                "simId": "currentMode"
+              },
+              "value": "SLEEP",
+              "reportedTimestamp": 1613867340000
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at power ON",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              },
+              "value": "SLEEP"
+            },
+            {
+              "id": "pcduConnection",
+              "name": "PCDU Connection",
+              "description": "Power connection line to a specific PCDU",
+              "metadata": {
+                "simId": "pcduConnection"
+              },
+              "value": "p60"
+            },
+            {
+              "id": "enableTMHK",
+              "name": "TM HK enable production",
+              "description": "Enable or Disable production of TM HK",
+              "metadata": {
+                "simId": "enableTMHK"
+              },
+              "value": false
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "TM HK Volume",
+              "description": "Telemetry HK dataRate, in [Mbit/s]",
+              "metadata": {
+                "simId": "dataRateTMHK"
+              },
+              "value": 0.004
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 292
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "powerConsumptionMode-SLEEP",
+              "name": "Power Consumption SLEEP",
+              "description": "Power consumption level for mode SLEEP, in [W]",
+              "metadata": {
+                "simId": "powerConsumptionMode-SLEEP"
+              },
+              "value": 0.3
+            },
+            {
+              "id": "wallAttachment",
+              "name": "Component wall",
+              "description": "Wall where the component is attached to, wrt satellite axes",
+              "metadata": {
+                "simId": "wall"
+              },
+              "value": "+Z"
+            },
+            {
+              "id": "storageunitConnection",
+              "name": "Memory Connection",
+              "description": "Data connection line to a specific storageunit",
+              "metadata": {
+                "simId": "storageunitConnection"
+              },
+              "value": "ssdMemory"
+            }
+          ]
+        },
+		{
+          "id": "nanocam",
+          "name": "Nanocam",
+          "parameters": [
+			{
+              "id": "temp",
+              "name": "Temperature",
+              "description": "Current system temperature, in [K]",
+              "metadata": {
+                "simId": "temperature"
+              },
+              "value": 282
+            },
+            {
+              "id": "tempRange",
+              "name": "Temperature Range",
+              "description": "System temperature range, in [K]",
+              "metadata": {
+                "simId": "temperatureRange"
+              },
+              "value": "200-383"
+            },
+            {
+              "id": "specificHeat",
+              "name": "Thermal Capacity",
+              "description": "System average thermal capacity, in [J/K]",
+              "metadata": {
+                "simId": "thermalCapacity"
+              },
+              "value": 56788
+            },
+            {
+              "id": "power:pdu:id",
+              "name": "PDU ID",
+              "description": "The ID of PDU component the payload is connected on",
+              "value": "p60",
+              "metadata": {
+                "simId": "pcduConnection"
+              }
+            },
+            {
+              "id": "power:consumption:mode:ON",
+              "name": "Consumption level ON",
+              "description": "Level consumption when the nanocam is on state 'ON'",
+              "value": 10,
+              "metadata": {
+                "simId": "powerConsumptionMode-1"
+              }
+            },
+            {
+              "id": "power:consumption:mode:SLEEP",
+              "name": "Consumption level ON",
+              "description": "Level consumption when the nanocam is on state 'SLEEP'",
+              "value": 5,
+              "metadata": {
+                "simId": "powerConsumptionMode-2"
+              }
+            },
+            {
+              "id": "power:consumption:mode:OFF",
+              "name": "Consumption level OFF",
+              "description": "Level consumption when the nanocam is on state 'OFF'",
+              "value": 0.0,
+              "metadata": {
+                "simId": "powerConsumptionMode-0"
+              }
+            },
+            {
+              "id": "power:consumption:mode:SNAP",
+              "name": "Consumption level SNAP",
+              "description": "Level consumption when the nanocam is on state 'SNAP'",
+              "value": 12,
+              "metadata": {
+                "simId": "powerConsumptionMode-3"
+              }
+            },
+            {
+              "id": "currentMode",
+              "name": "Current Mode",
+              "description": "Current Power Mode",
+              "value": "0",
+              "reportedTimestamp": 1613867340000,
+              "metadata": {
+                "simId": "currentMode"
+              }
+            },
+            {
+              "id": "modeAtPowerOn",
+              "name": "Mode at Power On",
+              "description": "Mode of operation of the model at power ON from PCDU. If 'latest', the model will be restarted with its latest mode",
+              "value": "0",
+              "metadata": {
+                "simId": "modeAtPowerOn"
+              }
+            },
+            {
+              "id": "enableTMHK",
+              "name": "Enable TM HK",
+              "description": "Enable or disable production of TM HK",
+              "value": false,
+              "metadata": {
+                "simId": "enableTMHK"
+              }
+            },
+            {
+              "id": "dataRateTMHK",
+              "name": "Data Rate for TM HK",
+              "description": "Data rate for TM HK production in [Mbit/s]",
+              "value": 0.0002,
+              "metadata": {
+                "simId": "dataRateTMHK"
+              }
+            }
+          ],
+          "metadata": {
+            "address": 13,
+            "simModel": "equipment"
+          }
+        },
+        {
+          "id": "antennaUHF-HSL",
+          "name": "Component Name",
+          "description": "Some antenna description",
+          "metadata": {
+            "simModel": "antenna"
+          },
+          "parameters": [
+            {
+              "id": "receiverConnection",
+              "name": "Receiver connection",
+              "description": "Connection to receiver equipment",
+              "metadata": {
+                "simId": "receiverConnection"
+              },
+              "value": "rxAx100"
+            },
+            {
+              "id": "frequencyRange",
+              "name": "Frequency Range",
+              "description": "Antenna Frequency Range in [Hz]",
+              "metadata": {
+                "simId": "frequencyRange"
+              },
+              "value": "437100000-437300000"
+            },
+            {
+              "id": "gainToNoiseTemp",
+              "name": "Gain to Noise Temperature",
+              "description": "Antenna Gain to noise Temperature in [dB/K]",
+              "metadata": {
+                "simId": "gainToNoiseTemp"
+              },
+              "value": -21.6
+            },
+            {
+              "id": "eirp",
+              "name": "Effective Isotropic Radiated Power",
+              "description": "Antenna Effective Isotropic Radiated Power in [dBW]",
+              "metadata": {
+                "simId": "eirp"
+              },
+              "value": 36
+            },
+            {
+              "id": "size",
+              "name": "Antenna size",
+              "description": "Antenna size [m]",
+              "metadata": {
+                "simId": "size"
+              },
+              "value": 0.2
+            },
+            {
+              "id": "orientation",
+              "name": "Antenna orientation",
+              "description": "Antenna Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q0"
+              },
+              "value": 0.6830127
+            },
+            {
+              "id": "orientation",
+              "name": "Antenna orientation",
+              "description": "Antenna Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q1"
+              },
+              "value": -0.1830127
+            },
+            {
+              "id": "orientation",
+              "name": "Antenna orientation",
+              "description": "Antenna Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q2"
+              },
+              "value": 0.6830127
+            },
+            {
+              "id": "orientation",
+              "name": "Antenna orientation",
+              "description": "Antenna Orientation, wrt satellite axes",
+              "metadata": {
+                "simId": "orientation-q3"
+              },
+              "value": -0.1830127
+            }
+          ]
+        }
+      ]
+    },
+	{
+      "id": "aalborg0",
+      "name": "Ground Station Name",
+      "archetype": "ground-station",
+      "parameters": {
+        "location": {
+          "altitude": 0,
+          "latitude": 57.04,
+          "longitude": 9.92
+        }
+      },
+      "components": [
+        {
+          "id": "aalborg0",
+          "name": "UHF band Antenna",
+          "description": "Some antenna description",
+          "metadata": {
+            "simModel": "antenna"
+          },
+          "parameters": [
+            {
+              "id": "frequencyTransmission",
+              "name": "Transmission Frequency",
+              "description": "Frequency for transmission channel, in [Hz]",
+              "metadata": {
+                "simId": "frequencyTransmission"
+              },
+              "value": 437250000
+            },
+            {
+              "id": "size",
+              "name": "Antenna Size",
+              "description": "Antenna Size, in [m]",
+              "metadata": {
+                "simId": "size"
+              },
+              "value": 2.85
+            },
+            {
+              "id": "efficiency",
+              "name": "Antenna Efficiency",
+              "description": "Antenna Efficiency in [%]",
+              "metadata": {
+                "simId": "efficiency"
+              },
+              "value": 0.9
+            },
+            {
+              "id": "gainToNoiseTemp",
+              "name": "Gain to Noise Temperature",
+              "description": "Antenna Gain to noise Temperature in [dB/K]",
+              "metadata": {
+                "simId": "gainToNoiseTemp"
+              },
+              "value": 348
+            },
+            {
+              "id": "eirp",
+              "name": "Effective Isotropic Radiated Power",
+              "description": "Antenna Effective Isotropic Radiated Power in [dBW]",
+              "metadata": {
+                "simId": "eirp"
+              },
+              "value": 28
+            },
+            {
+              "id": "polarization",
+              "name": "polarization",
+              "description": "Antenna Polarization is the orientation of the electric field of the radio wave with respect to the Earth's surface, in [deg]",
+              "metadata": {
+                "simId": "polarization"
+              },
+              "value": 45
+            },
+            {
+              "id": "unavailability",
+              "name": "unavailability",
+              "description": "unavailability of connection, in [%]",
+              "metadata": {
+                "simId": "unavailability"
+              },
+              "value": 0
+            },
+            {
+              "id": "thresholdTransmission",
+              "name": "margin threshold for satellite transmissions",
+              "description": "margin threshold in which the margin is considered valid, in [dB]",
+              "metadata": {
+                "simId": "thresholdTransmission"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613867340000,
+      "type": "attitude-change-CelestialBodyPointing",
+      "q0": 0.6830127,
+      "q1": -0.1830127,
+      "q2": 0.6830127,
+      "q3": -0.1830127,
+      "targetCelestialBody": "Earth"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613870732000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613871932000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613876372000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613877572000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613882072000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613883272000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613893412000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613894612000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613904752000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613905952000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613916092000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613917292000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613927432000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613928632000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613938772000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613939972000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613938862000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613938876000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613950112000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613951312000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613950202000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "MAGNTORQUE"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613950216000,
+      "type": "parameter-change",
+      "componentId": "Magnetor-gsw600",
+      "parameterId": "currentMode",
+      "value": "SLEEP"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613867342000,
+      "type": "data-transfer",
+      "direction": "reception",
+      "coupledAssetId": "aalborg0",
+      "dataSize": 0.004
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613913731000,
+      "type": "data-transfer",
+      "direction": "reception",
+      "coupledAssetId": "aalborg0",
+      "dataSize": 0.004
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613919350000,
+      "type": "data-transfer",
+      "direction": "reception",
+      "coupledAssetId": "aalborg0",
+      "dataSize": 0.004
+    },
+	{
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613919350000,
+      "type": "data-transfer",
+      "direction": "reception",
+      "coupledAssetId": "aalborg0",
+      "dataSize": 0.004
+    },
+	{
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613871942000,
+      "type": "parameter-change",
+      "componentId": "nanocam",
+      "parameterId": "currentMode",
+      "value": "1"
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613871962000,
+      "type": "data-production",
+      "duration": 0,
+      "componentId": "nanocam",
+      "data": 5
+    },
+    {
+      "assetId": "GOMX-4A",
+      "effectiveTime": 1613871072000,
+      "type": "data-production",
+      "duration": 0,
+      "componentId": "nanocam",
+      "data": 5
+    }
+  ],
+  "checks": [],
+  "variability": []
+}

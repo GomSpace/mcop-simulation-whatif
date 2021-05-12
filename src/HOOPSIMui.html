@@ -145,11 +145,10 @@ textarea {
         The folder should be located in the root folder where all <i>mcop-simulation</i> repositories are located.
     </p>
     <label>Simulation Scenario Bundle </label> <br>
-    <input type="text" name="scenarioFile" value="mcop-simulation-federates/input/simulation-scenario-bundle.json" size="90"/>
+    <input type="text" name="scenarioFile" value="mcop-simulation-standalone/input-MCOP-DATA/simulation-scenario-bundle.json" size="90"/>
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="openScenarioFile"><b>> OPEN SCENARIO FILE </b></button>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="openFolder"><b>> OPEN SCENARIO FILE FOLDER</b></button>
-    <p></p>
 </div>
 
 
@@ -195,6 +194,8 @@ textarea {
     </p>
     <label>Output folder </label> <br>
     <input type="text" name="outputPath" value="mcop-simulation-standalone/output/" size="90"/>
+    <p></p>
+    <button id='button' type="submit" onclick="activateAction(this); return false;" name="openOutputFolder"><b>> OPEN OUTPUT FOLDER</b></button>
 </div>
 
 
@@ -217,8 +218,6 @@ textarea {
     <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="runSimulation"><b>> RUN SIMULATION</b></button>
-    
-    
 </div>
 
 
@@ -229,19 +228,22 @@ textarea {
 <h4>5 / Visualize Results</h4>
 
 <div id=steps>
+<!--
     <p id=infoText>
         Visualize last simulation run results report.
     </p>
-    <textarea readonly id=textarea name="simulation-report">
-      Please run the first simulation to visualize its report.
+    <textarea readonly id=textarea name="simulation-report"> Please run the first simulation to visualize its report.
     </textarea>
   <br>
-  <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
   
+  <hr style="height:2px;border-width:0;background-color:rgb(74, 85, 103)">
+  -->
   <p id=infoText>
         Visualize last simulation run results on <a href="https://www.elastic.co/kibana" target="_blank">Kibana Elasticsearch</a>.
         <br>
+    <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="kibanaOutput"><b>> KIBANA</b></button>
+    <p></p>
     <p id=infoText>
         <b><i>(!) </i></b> The Index on Kibana Elasticsearch represents a database.
         Under one Index it is possible to visualize results from different simulations.
@@ -250,7 +252,6 @@ textarea {
 </div>
 
 <p></p>
-
 
 <!-- 
 ###############################################################################
@@ -266,20 +267,18 @@ textarea {
     </p>
 
     <label>HOOP Simulation Scenario Bundle </label> <br>
-    <input type="text" name="HOOPscenarioFile" value="mcop-simulation-federates/input/scenario-bundle-HOOP.json" size="90"/>
-
+    <input type="text" name="HOOPscenarioFile" value="mcop-simulation-standalone/input-MCOP-DATA/simulation-scenario-bundle.json" size="90"/>
     <p></p>
     <label>Converted file name </label> <br>
     <input type="text" name="HOOPscenarioCompatibleFileName" value="scenario-bundle-HOOP-compatible" size="90"/>
     <p></p>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="convertToRelativeTime"><b>> TO RELATIVE TIME</b></button>
     <button id='button' type="submit" onclick="activateAction(this); return false;" name="openSourceFolder"><b>> OPEN SOURCE SCENARIO FOLDER</b></button>
-    <p></p>
-
     <hr style="height:1px;border-width:0;background-color:rgb(74, 85, 103)">
     <!-- 
 ############################################################################### -->
-
+<!--
+[TODO with mission planner integrated]
     <p id=adv>HOOP Scenario Import</p>
     <p id=infoText>
         Convert scenario manually modified from input folder in a input for Mission Planner. <br>
@@ -386,7 +385,16 @@ function activateAction(element){
             return false; 
         return true; 
     } 
-</script> 
+</script>
+
+<script type="text/javascript">
+    // Function to load from file into text box
+    function placeFileContent(form, file) {
+    	readFileContent(file).then(content => {
+      	form.value = content
+      }).catch(error => console.log(error))
+    }
+</script>
 
 </form>
 </body>
